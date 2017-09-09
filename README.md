@@ -9,5 +9,5 @@ In a terminal:
 1) sudo gem install cocoapods
 2) cd IndoorTrackingClient-ios
 3) pod install
-4) double click on the .xcworkspace file
+4) double click on the *.xcworkspace* file (this is important, not the project file!)
 5) click run in xcode
