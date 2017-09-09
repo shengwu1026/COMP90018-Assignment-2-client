@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF5A311F63DD5A00087325 /* AppDelegate.swift */; };
+		29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF5A331F63DD5A00087325 /* ViewController.swift */; };
+		29CF5A371F63DD5A00087325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A351F63DD5A00087325 /* Main.storyboard */; };
+		29CF5A391F63DD5A00087325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A381F63DD5A00087325 /* Assets.xcassets */; };
+		29CF5A3C1F63DD5A00087325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A3A1F63DD5A00087325 /* LaunchScreen.storyboard */; };
+		5EC27E3F8A03317E9DA0487F /* Pods_IndoorTrackingClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D13B8D610FE7B5DEEC3AAF /* Pods_IndoorTrackingClient.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndoorTrackingClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CF5A311F63DD5A00087325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29CF5A331F63DD5A00087325 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29CF5A361F63DD5A00087325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29CF5A381F63DD5A00087325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IndoorTrackingClient/Assets.xcassets; sourceTree = "<group>"; };
+		29CF5A3B1F63DD5A00087325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29CF5A3D1F63DD5A00087325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = IndoorTrackingClient/Info.plist; sourceTree = "<group>"; };
+		98D13B8D610FE7B5DEEC3AAF /* Pods_IndoorTrackingClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndoorTrackingClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4A32ABAFAFE563D7E34027 /* Pods-IndoorTrackingClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-IndoorTrackingClient/Pods-IndoorTrackingClient.release.xcconfig"; sourceTree = "<group>"; };
+		AFAFF4C0AE372604B0500E96 /* Pods-IndoorTrackingClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IndoorTrackingClient/Pods-IndoorTrackingClient.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29CF5A2B1F63DD5A00087325 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC27E3F8A03317E9DA0487F /* Pods_IndoorTrackingClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29CF5A251F63DD5A00087325 = {
+			isa = PBXGroup;
+			children = (
+				29CF5A431F63DDA700087325 /* Supporting Files */,
+				29CF5A301F63DD5A00087325 /* IndoorTrackingClient */,
+				29CF5A2F1F63DD5A00087325 /* Products */,
+				DC15E4538142DF022E297F9B /* Pods */,
+				58B63FECCAE7E8A10CC9A4E8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		29CF5A2F1F63DD5A00087325 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29CF5A301F63DD5A00087325 /* IndoorTrackingClient */ = {
+			isa = PBXGroup;
+			children = (
+				29CF5A311F63DD5A00087325 /* AppDelegate.swift */,
+				29CF5A331F63DD5A00087325 /* ViewController.swift */,
+			);
+			path = IndoorTrackingClient;
+			sourceTree = "<group>";
+		};
+		29CF5A431F63DDA700087325 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29CF5A351F63DD5A00087325 /* Main.storyboard */,
+				29CF5A381F63DD5A00087325 /* Assets.xcassets */,
+				29CF5A3A1F63DD5A00087325 /* LaunchScreen.storyboard */,
+				29CF5A3D1F63DD5A00087325 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58B63FECCAE7E8A10CC9A4E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98D13B8D610FE7B5DEEC3AAF /* Pods_IndoorTrackingClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC15E4538142DF022E297F9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFAFF4C0AE372604B0500E96 /* Pods-IndoorTrackingClient.debug.xcconfig */,
+				9A4A32ABAFAFE563D7E34027 /* Pods-IndoorTrackingClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29CF5A2D1F63DD5A00087325 /* IndoorTrackingClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29CF5A401F63DD5A00087325 /* Build configuration list for PBXNativeTarget "IndoorTrackingClient" */;
+			buildPhases = (
+				9530F6D04C5339568EA9638D /* [CP] Check Pods Manifest.lock */,
+				29CF5A2A1F63DD5A00087325 /* Sources */,
+				29CF5A2B1F63DD5A00087325 /* Frameworks */,
+				29CF5A2C1F63DD5A00087325 /* Resources */,
+				AD80A1BFE997E36F675D2443 /* [CP] Embed Pods Frameworks */,
+				3A7190327C066CA32F1D09B5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IndoorTrackingClient;
+			productName = IndoorTrackingClient;
+			productReference = 29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29CF5A261F63DD5A00087325 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = IDC;
+				TargetAttributes = {
+					29CF5A2D1F63DD5A00087325 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 29CF5A291F63DD5A00087325 /* Build configuration list for PBXProject "IndoorTrackingClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29CF5A251F63DD5A00087325;
+			productRefGroup = 29CF5A2F1F63DD5A00087325 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29CF5A2D1F63DD5A00087325 /* IndoorTrackingClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29CF5A2C1F63DD5A00087325 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29CF5A3C1F63DD5A00087325 /* LaunchScreen.storyboard in Resources */,
+				29CF5A391F63DD5A00087325 /* Assets.xcassets in Resources */,
+				29CF5A371F63DD5A00087325 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A7190327C066CA32F1D09B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IndoorTrackingClient/Pods-IndoorTrackingClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9530F6D04C5339568EA9638D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD80A1BFE997E36F675D2443 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IndoorTrackingClient/Pods-IndoorTrackingClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29CF5A2A1F63DD5A00087325 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */,
+				29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		29CF5A351F63DD5A00087325 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29CF5A361F63DD5A00087325 /* Base */,
+			);
+			name = Main.storyboard;
+			path = IndoorTrackingClient;
+			sourceTree = "<group>";
+		};
+		29CF5A3A1F63DD5A00087325 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29CF5A3B1F63DD5A00087325 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = IndoorTrackingClient;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29CF5A3E1F63DD5A00087325 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29CF5A3F1F63DD5A00087325 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29CF5A411F63DD5A00087325 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFAFF4C0AE372604B0500E96 /* Pods-IndoorTrackingClient.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IndoorTrackingClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IDC.IndoorTrackingClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		29CF5A421F63DD5A00087325 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A4A32ABAFAFE563D7E34027 /* Pods-IndoorTrackingClient.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IndoorTrackingClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IDC.IndoorTrackingClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29CF5A291F63DD5A00087325 /* Build configuration list for PBXProject "IndoorTrackingClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29CF5A3E1F63DD5A00087325 /* Debug */,
+				29CF5A3F1F63DD5A00087325 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29CF5A401F63DD5A00087325 /* Build configuration list for PBXNativeTarget "IndoorTrackingClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29CF5A411F63DD5A00087325 /* Debug */,
+				29CF5A421F63DD5A00087325 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29CF5A261F63DD5A00087325 /* Project object */;
+}
