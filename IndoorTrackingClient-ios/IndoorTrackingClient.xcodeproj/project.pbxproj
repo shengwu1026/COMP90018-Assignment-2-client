@@ -12,6 +12,7 @@
 		29CF5A371F63DD5A00087325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A351F63DD5A00087325 /* Main.storyboard */; };
 		29CF5A391F63DD5A00087325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A381F63DD5A00087325 /* Assets.xcassets */; };
 		29CF5A3C1F63DD5A00087325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A3A1F63DD5A00087325 /* LaunchScreen.storyboard */; };
+		29CF5A481F63F5EB00087325 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF5A471F63F5EB00087325 /* Beacon.swift */; };
 		5EC27E3F8A03317E9DA0487F /* Pods_IndoorTrackingClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D13B8D610FE7B5DEEC3AAF /* Pods_IndoorTrackingClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		29CF5A381F63DD5A00087325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IndoorTrackingClient/Assets.xcassets; sourceTree = "<group>"; };
 		29CF5A3B1F63DD5A00087325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29CF5A3D1F63DD5A00087325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = IndoorTrackingClient/Info.plist; sourceTree = "<group>"; };
+		29CF5A471F63F5EB00087325 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Beacon.swift; path = Models/Beacon.swift; sourceTree = "<group>"; };
 		98D13B8D610FE7B5DEEC3AAF /* Pods_IndoorTrackingClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndoorTrackingClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4A32ABAFAFE563D7E34027 /* Pods-IndoorTrackingClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-IndoorTrackingClient/Pods-IndoorTrackingClient.release.xcconfig"; sourceTree = "<group>"; };
 		AFAFF4C0AE372604B0500E96 /* Pods-IndoorTrackingClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IndoorTrackingClient/Pods-IndoorTrackingClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +64,9 @@
 		29CF5A301F63DD5A00087325 /* IndoorTrackingClient */ = {
 			isa = PBXGroup;
 			children = (
+				29CF5A451F63F5C000087325 /* Controllers */,
+				29CF5A461F63F5C500087325 /* Views */,
+				29CF5A441F63F5B400087325 /* Models */,
 				29CF5A311F63DD5A00087325 /* AppDelegate.swift */,
 				29CF5A331F63DD5A00087325 /* ViewController.swift */,
 			);
@@ -77,6 +82,28 @@
 				29CF5A3D1F63DD5A00087325 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29CF5A441F63F5B400087325 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29CF5A471F63F5EB00087325 /* Beacon.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		29CF5A451F63F5C000087325 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		29CF5A461F63F5C500087325 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		58B63FECCAE7E8A10CC9A4E8 /* Frameworks */ = {
@@ -221,6 +248,7 @@
 			files = (
 				29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */,
 				29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */,
+				29CF5A481F63F5EB00087325 /* Beacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +416,7 @@
 				29CF5A421F63DD5A00087325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
