@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     // This function is called when the request label is tapped.
     func didTap(gesture: UITapGestureRecognizer) {
         
-        getBeacon(withID: "02ea1174-0e7e-4245-a5f3-0ffe764905dc") { responseJSONString in
+        getBeacon(withID: "5658a30e-5b6d-4dc1-9d66-77e8708cf266") { responseJSONString in
             self.presentAlert(message: responseJSONString)
         }
     }
