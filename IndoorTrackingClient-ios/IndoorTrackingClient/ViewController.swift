@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addRequestLabel()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(didTapMapButton))
+    
+        
     }
     
     // This function is called when the request label is tapped.
@@ -27,6 +31,10 @@ class ViewController: UIViewController {
                 self.presentAlert(message: message)
             }
         }
+    }
+    
+    func didTapMapButton() {
+        performSegue(withIdentifier: "SegueToMap", sender: self)
     }
     
     // Presents an alert with a dismiss button. Will show whatever is passed as the message.

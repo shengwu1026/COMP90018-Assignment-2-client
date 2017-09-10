@@ -77,7 +77,7 @@ class Beacon {
                         /*
                         // 2017-09-09T10:23:04.301+10:00
                         let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                        formatter.dateFormat = "yyyy-MM-dd’T’HH:mm:ss.SSSXXXXX"
                         
                         let lastActivityFromString = formatter.date(from: date)
                         lastActivity = lastActivityFromString!
@@ -91,4 +91,15 @@ class Beacon {
             }
         }
     }
+    
+    static func create(lotID: UUID, manufacturerUUID: UUID, beaconType: BeaconType, coordinates: BeaconCoordinates, lastActivity: Date) {
+        
+        
+        // 1: create on server
+        
+        // 2: with ok response, complete completion handler, pass in the new beacon object.
+        
+    }
+    
+    
 }
