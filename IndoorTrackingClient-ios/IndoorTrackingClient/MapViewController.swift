@@ -11,13 +11,20 @@ import UIKit
 
 class MapViewController : UIViewController {
     
-    @IBOutlet var map: LocationView?
+    let map: LocationView = LocationView()
+    
     var displayLink: CADisplayLink?
     var previousTimestamp: Double = 0
     var currentTimestamp: Double = 0
     var t: Double = 0
     
     override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.white
+        setupMapConstraints()
+        
         // deal with positions
         displayLink = CADisplayLink(target: self, selector: #selector(animationUpdate))
         displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
@@ -31,7 +38,7 @@ class MapViewController : UIViewController {
         let p2 = getPosition(centre: CGPoint(x: 2, y: 2), radius: 3, t: t + Double.pi)
         let positions = [p1, p2]
         
-        map?.setPositions(positions: positions)
+        map.setPositions(positions: positions)
     }
     
     private func timeSinceLastFrame() -> Double {
@@ -55,6 +62,21 @@ class MapViewController : UIViewController {
         }
         
         return dt
+    }
+    
+    private func setupMapConstraints() {
+        
+        map.translatesAutoresizingMaskIntoConstraints = false
+        
+        let leftConstraint = NSLayoutConstraint(item: map, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 0)
+        let topConstraint = NSLayoutConstraint(item: map, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: map, attribute: .height, relatedBy: .equal, toItem: self.view, attribute: .height, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: map, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1, constant: 0)
+        
+        let constraints = [leftConstraint, topConstraint, heightConstraint, widthConstraint]
+        
+        self.view.addSubview(map)
+        self.view.addConstraints(constraints)
     }
     
     // Testing

@@ -54,6 +54,7 @@ class LocationView : UIView {
     }
     
     private func startup() {
+        self.backgroundColor = UIColor.white
         self.isUserInteractionEnabled = true
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
         self.addGestureRecognizer(pinch)

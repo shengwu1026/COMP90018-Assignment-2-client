@@ -1,23 +1,23 @@
 //
-//  MenuTableViewController.swift
+//  UserListController.swift
 //  IndoorTrackingClient
 //
-//  Created by Phillip McKenna on 11/9/17.
+//  Created by Phillip McKenna on 16/9/17.
 //  Copyright © 2017 IDC. All rights reserved.
 //
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
-    
-    static let options = ["Beacons In Range", "Users", "Map"]
-    static let controllers = [BeaconListController(), UserListController(), MapViewController()]
-    
-    static let reuseIdentifier = "MenuCell"
+class UserListController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: MenuTableViewController.reuseIdentifier)
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,27 +28,24 @@ class MenuTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MenuTableViewController.options.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewController.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = MenuTableViewController.options[indexPath.row]
-        cell.detailTextLabel?.text = ">"
+        // Configure the cell...
 
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = MenuTableViewController.controllers[indexPath.row]
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

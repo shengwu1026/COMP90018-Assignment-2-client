@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E41F6CAF8300AB2239 /* BeaconListController.swift */; };
+		297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E61F6CAF9700AB2239 /* UserListController.swift */; };
 		29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF5A311F63DD5A00087325 /* AppDelegate.swift */; };
 		29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF5A331F63DD5A00087325 /* ViewController.swift */; };
 		29CF5A371F63DD5A00087325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A351F63DD5A00087325 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		297850E41F6CAF8300AB2239 /* BeaconListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconListController.swift; path = Controllers/BeaconListController.swift; sourceTree = "<group>"; };
+		297850E61F6CAF9700AB2239 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndoorTrackingClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CF5A311F63DD5A00087325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29CF5A331F63DD5A00087325 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				29CF5A4B1F653A1500087325 /* MapViewController.swift */,
 				29CF5A4D1F6674C100087325 /* MenuTableViewController.swift */,
 				29CF5A4F1F67C43B00087325 /* BeaconDistanceViewController.swift */,
+				297850E41F6CAF8300AB2239 /* BeaconListController.swift */,
+				297850E61F6CAF9700AB2239 /* UserListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +270,8 @@
 				29CF5A4A1F652CB700087325 /* LocationView.swift in Sources */,
 				29CF5A4E1F6674C100087325 /* MenuTableViewController.swift in Sources */,
 				29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */,
+				297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */,
+				297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */,
 				29CF5A4C1F653A1500087325 /* MapViewController.swift in Sources */,
 				29CF5A481F63F5EB00087325 /* Beacon.swift in Sources */,
 			);
