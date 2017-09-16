@@ -26,6 +26,12 @@ class ViewController: UIViewController {
     func didTap(gesture: UITapGestureRecognizer) {
         
         getBeacon(withID: "5658a30e-5b6d-4dc1-9d66-77e8708cf266") { responseJSONString in
+            
+            guard responseJSONString != nil else {
+                print("No response!")
+                return
+            }
+            
             if let beacon = Beacon(jsonString: responseJSONString!) {
                 let message = "Co-ordinates for beacon with ID 5658a30e-5b6d-4dc1-9d66-77e8708cf266:\n \(beacon.coordinates.x), \(beacon.coordinates.y)"
                 self.presentAlert(message: message)
