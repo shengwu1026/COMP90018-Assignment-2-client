@@ -92,13 +92,11 @@ class Beacon {
         }
     }
     
-    static func create(lotID: UUID, manufacturerUUID: UUID, beaconType: BeaconType, coordinates: BeaconCoordinates, lastActivity: Date) {
-        
+    static func create(lotID: UUID, manufacturerUUID: UUID, beaconType: BeaconType, coordinates: BeaconCoordinates, lastActivity: Date, handler: (Beacon) -> Void) {
         
         // 1: create on server
         
         // 2: with ok response, complete completion handler, pass in the new beacon object.
-        
     }
     
     
