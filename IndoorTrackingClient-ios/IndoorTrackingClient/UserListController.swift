@@ -16,16 +16,21 @@ class UserListController: UITableViewController {
         super.viewDidLoad()
         
         // Setup the tableview
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        User.all {
-            self.gotUsers(users: $0)
-        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(didTapCreate))
+        
+        // Load all the users.
+        reloadUsers()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadUsers()
     }
 
     // MARK: - Table view data source
@@ -37,18 +42,52 @@ class UserListController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Does this really dequeue or is it creating it every time?
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        if(cell == nil) {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        }
+        
+        cell!.textLabel?.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
+        print(users[indexPath.row].firstName)
+        cell!.detailTextLabel?.text = users[indexPath.row].id.uuidString
+
+        return cell!
+    }
+    
+    
+    // Other
+    // #####
+    
+    func reloadUsers() {
+        User.all {
+            self.gotUsers(users: $0)
+        }
+    }
+    
+    func didTapCreate() {
+        let creationScreen = createForm()
+        present(creationScreen, animated: true, completion: nil)
+    }
     
     private func gotUsers(users: [User]) {
         self.users = users
         self.tableView.reloadData()
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        cell.textLabel?.text = users[indexPath.row].id.description
-
-        return cell
+    
+    private func createForm() -> FormViewController {
+        let userSection = Section(name: "USER DETAILS")
+        userSection.addField(InputField(id: "first_name", title: "First Name", isRequired: true))
+        userSection.addField(InputField(id: "last_name", title: "Last Name", isRequired: true))
+        userSection.addField(InputField(id: "username", title: "Username", isRequired: true))
+        userSection.addField(InputField(id: "password", title: "Password", isRequired: true))
+        
+        let formViewController = FormViewController(formTitle: "Create User", sections: [userSection])
+        formViewController.delegate = self
+        return formViewController
     }
 
     /*
@@ -96,4 +135,40 @@ class UserListController: UITableViewController {
     }
     */
 
+}
+
+extension UserListController : FormDelegate {
+    func willMoveToNextInput(_ next: InputField) {
+        
+    }
+    
+    func formShouldSubmitWithData(_ data: [String : String], complete: Bool, incompleteFieldIds: [String]?) -> Bool {
+        if(!complete) {
+            if let ids = incompleteFieldIds {
+                shakeIncompleteFields(ids)
+            }
+            return false
+        }
+        
+        return true
+    }
+    
+    func formDidSubmitWithData(_ data: [String : String]) {
+        print(data)
+        User.create(parameters: data) { user in
+            self.presentedViewController?.dismiss(animated: true, completion: nil)
+            self.reloadUsers()
+        }
+    }
+    
+    fileprivate func shakeIncompleteFields(_ fieldIds: [String]) {
+        for fieldId in fieldIds {
+            if let viewController = self.presentedViewController as? FormViewController {
+                if let cell = viewController.cellForFieldId(fieldId) {
+                    cell.contentView.frame.origin.x = -50
+                    UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 8, options: UIViewAnimationOptions.curveEaseOut, animations: { cell.contentView.frame.origin.x = 0 }, completion: nil)
+                }
+            }
+        }
+    }
 }

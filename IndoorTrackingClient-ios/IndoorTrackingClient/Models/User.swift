@@ -159,12 +159,40 @@ class User {
         }
     }
     
-    static func create(username: String, firstName: String, lastName: String, handler: (User) -> Void) {
-        
+    
+    
+    // Super simple helper functions on the class.
+    // ###########################################
+    static func create(parameters: [String:Any], handler: @escaping (User) -> Void) {
         // 1: create on server
+        // 2: with ok response, complete completion handler, pass in the new user object.
         
-        // 2: with ok response, complete completion handler, pass in the new beacon object.
+        let params = ["user" : parameters]
         
+        Alamofire.request("http://13.70.187.234/api/users", method: .post, parameters: params, encoding: JSONEncoding.default).responseString(completionHandler: { responseString in
+            if let stringValue = responseString.value, let newUser = User(jsonString: stringValue) {
+                print(stringValue)
+                handler(newUser)
+            }
+        })
+    }
+    
+    static func create(username: String, firstName: String, lastName: String, password: String, handler: @escaping (User) -> Void) {
+        // 1: create on server
+        // 2: with ok response, complete completion handler, pass in the new user object.
+        
+        let parameters = ["first_name" : firstName,
+                          "last_name" : lastName,
+                          "username": username,
+                          "password" : password]
+        
+        Alamofire.request("http://13.70.187.234/api/users", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString(completionHandler: { responseString in
+            if let stringValue = responseString.value,
+                let newUser = User(jsonString: stringValue) {
+                handler(newUser)
+            }
+        })
+    
     }
     
     static func all(handler: @escaping ([User]) -> Void) {

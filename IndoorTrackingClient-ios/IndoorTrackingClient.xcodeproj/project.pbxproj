@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2972626E1F7CE1EC0002D701 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972626D1F7CE1EC0002D701 /* FormViewController.swift */; };
+		297262711F7CE2630002D701 /* FormInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262701F7CE2630002D701 /* FormInputCell.swift */; };
+		297262731F7CE2780002D701 /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262721F7CE2780002D701 /* TitleBarView.swift */; };
+		297262751F7CE2B70002D701 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262741F7CE2B70002D701 /* Theme.swift */; };
+		297262781F7CE3770002D701 /* Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262771F7CE3770002D701 /* Contraints.swift */; };
 		297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E41F6CAF8300AB2239 /* BeaconListController.swift */; };
 		297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E61F6CAF9700AB2239 /* UserListController.swift */; };
 		297850EB1F6E10F900AB2239 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850EA1F6E10F900AB2239 /* User.swift */; };
@@ -24,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2972626D1F7CE1EC0002D701 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormViewController.swift; path = Controllers/Forms/FormViewController.swift; sourceTree = "<group>"; };
+		297262701F7CE2630002D701 /* FormInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormInputCell.swift; path = Views/Forms/FormInputCell.swift; sourceTree = "<group>"; };
+		297262721F7CE2780002D701 /* TitleBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleBarView.swift; path = Views/Forms/TitleBarView.swift; sourceTree = "<group>"; };
+		297262741F7CE2B70002D701 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Views/Forms/Theme.swift; sourceTree = "<group>"; };
+		297262771F7CE3770002D701 /* Contraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contraints.swift; path = Helpers/Contraints.swift; sourceTree = "<group>"; };
 		297850E41F6CAF8300AB2239 /* BeaconListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconListController.swift; path = Controllers/BeaconListController.swift; sourceTree = "<group>"; };
 		297850E61F6CAF9700AB2239 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		297850EA1F6E10F900AB2239 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -56,6 +66,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2972626A1F7CDDC90002D701 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				297850E61F6CAF9700AB2239 /* UserListController.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
+		2972626C1F7CE1BB0002D701 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				2972626D1F7CE1EC0002D701 /* FormViewController.swift */,
+			);
+			name = Forms;
+			sourceTree = "<group>";
+		};
+		2972626F1F7CE2480002D701 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				297262701F7CE2630002D701 /* FormInputCell.swift */,
+				297262721F7CE2780002D701 /* TitleBarView.swift */,
+				297262741F7CE2B70002D701 /* Theme.swift */,
+			);
+			name = Forms;
+			sourceTree = "<group>";
+		};
+		297262761F7CE3600002D701 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				297262771F7CE3770002D701 /* Contraints.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		29CF5A251F63DD5A00087325 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +122,7 @@
 		29CF5A301F63DD5A00087325 /* IndoorTrackingClient */ = {
 			isa = PBXGroup;
 			children = (
+				297262761F7CE3600002D701 /* Helpers */,
 				29CF5A451F63F5C000087325 /* Controllers */,
 				29CF5A461F63F5C500087325 /* Views */,
 				29CF5A441F63F5B400087325 /* Models */,
@@ -110,11 +155,12 @@
 		29CF5A451F63F5C000087325 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2972626C1F7CE1BB0002D701 /* Forms */,
+				2972626A1F7CDDC90002D701 /* Users */,
 				29CF5A4B1F653A1500087325 /* MapViewController.swift */,
 				29CF5A4D1F6674C100087325 /* MenuTableViewController.swift */,
 				29CF5A4F1F67C43B00087325 /* BeaconDistanceViewController.swift */,
 				297850E41F6CAF8300AB2239 /* BeaconListController.swift */,
-				297850E61F6CAF9700AB2239 /* UserListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +168,7 @@
 		29CF5A461F63F5C500087325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2972626F1F7CE2480002D701 /* Forms */,
 				29CF5A491F652CB700087325 /* LocationView.swift */,
 			);
 			name = Views;
@@ -269,15 +316,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */,
+				2972626E1F7CE1EC0002D701 /* FormViewController.swift in Sources */,
+				297262731F7CE2780002D701 /* TitleBarView.swift in Sources */,
+				297262711F7CE2630002D701 /* FormInputCell.swift in Sources */,
 				29CF5A501F67C43B00087325 /* BeaconDistanceViewController.swift in Sources */,
 				29CF5A4A1F652CB700087325 /* LocationView.swift in Sources */,
 				29CF5A4E1F6674C100087325 /* MenuTableViewController.swift in Sources */,
 				29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */,
 				297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */,
+				297262781F7CE3770002D701 /* Contraints.swift in Sources */,
 				297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */,
 				29CF5A4C1F653A1500087325 /* MapViewController.swift in Sources */,
 				297850EB1F6E10F900AB2239 /* User.swift in Sources */,
 				29CF5A481F63F5EB00087325 /* Beacon.swift in Sources */,
+				297262751F7CE2B70002D701 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
