@@ -29,6 +29,8 @@ class User {
     var createdAt: Date!
     var updatedAt: Date!
     
+    var chip: Chip?
+    
     init?(dict: [String:Any]) {
         
         // get the individual values
@@ -159,7 +161,29 @@ class User {
         }
     }
     
-    
+    func addNewChip(handler: @escaping (String) -> Void) {
+        
+        // Only want to add a new chip if one doesn't already exist for this user.
+        guard self.chip == nil else {
+            print("Chip was not nil, so exiting early.")
+            return
+        }
+        
+        let innerParams = ["user_id" : self.id.uuidString]
+        let parameters = ["little_brother_chip" : innerParams]
+        
+        Alamofire.request("http://13.70.187.234/api/little_brother_chips", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { responseJSON in
+            
+            print(responseJSON)
+            
+            if let response = responseJSON.value as? [String : Any] {
+                if let chipID = response["id"] as? String {
+                    self.chip = Chip(id: chipID)
+                    handler(chipID)
+                }
+            }
+        }
+    }
     
     // Super simple helper functions on the class.
     // ###########################################
@@ -171,7 +195,6 @@ class User {
         
         Alamofire.request("http://13.70.187.234/api/users", method: .post, parameters: params, encoding: JSONEncoding.default).responseString(completionHandler: { responseString in
             if let stringValue = responseString.value, let newUser = User(jsonString: stringValue) {
-                print(stringValue)
                 handler(newUser)
             }
         })
@@ -192,41 +215,57 @@ class User {
                 handler(newUser)
             }
         })
-    
     }
     
     static func all(handler: @escaping ([User]) -> Void) {
         
         let requestURL = AppDelegate.apiRoot.appending("users/")
         
-        Alamofire.request(requestURL).responseString { response in
+        // Get a list of all the chips first.
+        // Need to get the chip for each user.
+        
+        // See if there are any chips that have this user associated, if so, set the chip id for this user.
+        Alamofire.request("http://13.70.187.234/api/little_brother_chips").responseJSON { response in
             
-            guard response.result.value != nil else {
-                print("No response")
-                return
-            }
-            
-            var users = [User]()
-            
-            if let jsonData = response.result.value?.data(using: .utf8) {
+            if let arrayOfChips = response.value as? [[String : String]] {
                 
-                do {
-                    if let jsonArray = try JSONSerialization.jsonObject(with: jsonData) as? [[String:Any]] {
+                // Get all the users.
+                Alamofire.request(requestURL).responseString { response in
+                    
+                    guard response.result.value != nil else {
+                        print("No response")
+                        return
+                    }
+                    
+                    var users = [User]()
+                    
+                    if let jsonData = response.result.value?.data(using: .utf8) {
                         
-                        for userDict in jsonArray {
-                            if let user = User(dict: userDict) {
-                                users.append(user)
+                        do {
+                            if let jsonArray = try JSONSerialization.jsonObject(with: jsonData) as? [[String:Any]] {
+                                
+                                // For each user, check if there is an associated chip.
+                                for userDict in jsonArray {
+                                    if let user = User(dict: userDict) {
+                                        
+                                        if let associatedChip = arrayOfChips.filter({ $0["user_id"]?.lowercased() == user.id.uuidString.lowercased()}).first {
+                                            user.chip = Chip(id: associatedChip["id"]!)
+                                        }
+                                        
+                                        users.append(user)
+                                    }
+                                }
                             }
                         }
+                        catch {
+                            print(error)
+                            return
+                        }
                     }
-                }
-                catch {
-                    print(error)
-                    return
+                    
+                    handler(users)
                 }
             }
-            
-            handler(users)
         }
     }
 }

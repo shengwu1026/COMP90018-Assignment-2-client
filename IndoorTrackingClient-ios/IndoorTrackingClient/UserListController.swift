@@ -52,12 +52,18 @@ class UserListController: UITableViewController {
         }
         
         cell!.textLabel?.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
-        print(users[indexPath.row].firstName)
+        //print(users[indexPath.row].firstName)
         cell!.detailTextLabel?.text = users[indexPath.row].id.uuidString
 
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        let chipAddController = UserChipController()
+        chipAddController.user = user
+        self.navigationController?.pushViewController(chipAddController, animated: true)
+    }
     
     // Other
     // #####
@@ -154,7 +160,6 @@ extension UserListController : FormDelegate {
     }
     
     func formDidSubmitWithData(_ data: [String : String]) {
-        print(data)
         User.create(parameters: data) { user in
             self.presentedViewController?.dismiss(animated: true, completion: nil)
             self.reloadUsers()

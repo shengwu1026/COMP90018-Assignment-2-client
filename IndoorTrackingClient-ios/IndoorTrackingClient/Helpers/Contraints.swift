@@ -46,6 +46,14 @@ func constraintsToContainViewVertically(_ view: UIView, inContainingView contain
     return [topConstraint, bottomConstraint]
 }
 
+func constraintsToCentreView(_ view: UIView, inContainingView containingView: UIView) -> [NSLayoutConstraint] {
+    
+    let centreXConstraint = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: containingView, attribute: .centerX, multiplier: 1, constant: 0)
+    let centreYConstraint = NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: containingView, attribute: .centerY, multiplier: 1, constant: 0)
+    
+    return [centreXConstraint, centreYConstraint]
+}
+
 func constraintsToContainViewVertically(_ view: UIView, inContainingView containingView: UIView, withTopInset topInset: CGFloat, andBottomInset bottomInset: CGFloat) -> [NSLayoutConstraint] {
     
     let topConstraint = NSLayoutConstraint(

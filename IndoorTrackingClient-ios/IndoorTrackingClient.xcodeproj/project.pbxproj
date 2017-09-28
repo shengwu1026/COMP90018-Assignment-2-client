@@ -12,6 +12,8 @@
 		297262731F7CE2780002D701 /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262721F7CE2780002D701 /* TitleBarView.swift */; };
 		297262751F7CE2B70002D701 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262741F7CE2B70002D701 /* Theme.swift */; };
 		297262781F7CE3770002D701 /* Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262771F7CE3770002D701 /* Contraints.swift */; };
+		2972627A1F7D26B20002D701 /* UserChipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262791F7D26B20002D701 /* UserChipController.swift */; };
+		2972627C1F7D273F0002D701 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972627B1F7D273F0002D701 /* Chip.swift */; };
 		297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E41F6CAF8300AB2239 /* BeaconListController.swift */; };
 		297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E61F6CAF9700AB2239 /* UserListController.swift */; };
 		297850EB1F6E10F900AB2239 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850EA1F6E10F900AB2239 /* User.swift */; };
@@ -34,6 +36,8 @@
 		297262721F7CE2780002D701 /* TitleBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleBarView.swift; path = Views/Forms/TitleBarView.swift; sourceTree = "<group>"; };
 		297262741F7CE2B70002D701 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Views/Forms/Theme.swift; sourceTree = "<group>"; };
 		297262771F7CE3770002D701 /* Contraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contraints.swift; path = Helpers/Contraints.swift; sourceTree = "<group>"; };
+		297262791F7D26B20002D701 /* UserChipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserChipController.swift; path = Controllers/Users/UserChipController.swift; sourceTree = "<group>"; };
+		2972627B1F7D273F0002D701 /* Chip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chip.swift; path = Models/Chip.swift; sourceTree = "<group>"; };
 		297850E41F6CAF8300AB2239 /* BeaconListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconListController.swift; path = Controllers/BeaconListController.swift; sourceTree = "<group>"; };
 		297850E61F6CAF9700AB2239 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		297850EA1F6E10F900AB2239 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				297850E61F6CAF9700AB2239 /* UserListController.swift */,
+				297262791F7D26B20002D701 /* UserChipController.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			children = (
 				29CF5A471F63F5EB00087325 /* Beacon.swift */,
 				297850EA1F6E10F900AB2239 /* User.swift */,
+				2972627B1F7D273F0002D701 /* Chip.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -325,10 +331,12 @@
 				29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */,
 				297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */,
 				297262781F7CE3770002D701 /* Contraints.swift in Sources */,
+				2972627A1F7D26B20002D701 /* UserChipController.swift in Sources */,
 				297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */,
 				29CF5A4C1F653A1500087325 /* MapViewController.swift in Sources */,
 				297850EB1F6E10F900AB2239 /* User.swift in Sources */,
 				29CF5A481F63F5EB00087325 /* Beacon.swift in Sources */,
+				2972627C1F7D273F0002D701 /* Chip.swift in Sources */,
 				297262751F7CE2B70002D701 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
