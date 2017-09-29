@@ -23,12 +23,22 @@ class BeaconInfoCell : UITableViewCell {
 class BeaconListController: UITableViewController {
 
     var locationManager: CLLocationManager!
-    let proximityUUID = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!
+    let proximityUUID = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")! // This is the default for our beacons.
     var detectedBeacons = [CLBeacon]()
+    var currentLot: Lot!
     var haveSetup = false
 
     deinit {
         print("did deinit")
+    }
+    
+    init(currentLot: Lot) {
+        self.currentLot = currentLot
+        super.init(style: .plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -43,6 +53,7 @@ class BeaconListController: UITableViewController {
         haveSetup = true
         
         startMonitoringBeaconRegion()
+        self.title = "New Nearby Beacons"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +96,12 @@ class BeaconListController: UITableViewController {
         cell.detailTextLabel?.text = "RSSI: \(detectedBeacons[indexPath.row].rssi)"
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedBeacon = detectedBeacons[indexPath.row]
+        let addNewBeaconController = AddBeaconViewController(selectedBeacon: selectedBeacon, currentLot: currentLot)
+        self.present(addNewBeaconController, animated: true, completion: nil)
     }
 }
 

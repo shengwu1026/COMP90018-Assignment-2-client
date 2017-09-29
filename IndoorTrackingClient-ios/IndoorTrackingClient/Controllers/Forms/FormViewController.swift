@@ -21,7 +21,7 @@ class FormViewController : UIViewController {
     
     fileprivate var statusBarHeight: CGFloat = 20
     
-    fileprivate(set) var cells = [[FormInputCell]]()
+    var cells = [[FormInputCell]]()
     fileprivate(set) var mostRecentActiveCell: FormInputCell?
     
     // Need to keep track of this so we can update the size of the table view when the keyboard shows.
@@ -100,7 +100,7 @@ class FormViewController : UIViewController {
     }
     
     // Want to create a set amount of cells and reuse these cells so that we can get the information entered into them by the user.
-    fileprivate func createTableViewCells() {
+    func createTableViewCells() {
         
         let cellBackgroundColor = Theme.currentTheme.colorForKey("global.input.cellBackgroundColor") ?? UIColor.white
         

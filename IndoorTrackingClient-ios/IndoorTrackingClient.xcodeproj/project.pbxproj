@@ -18,6 +18,9 @@
 		297262811F7DDFE10002D701 /* Lot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262801F7DDFE10002D701 /* Lot.swift */; };
 		297262831F7DE5820002D701 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262821F7DE5820002D701 /* Building.swift */; };
 		297262851F7DF4CB0002D701 /* BuildingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262841F7DF4CB0002D701 /* BuildingListController.swift */; };
+		297262881F7E073B0002D701 /* AddBeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262871F7E073B0002D701 /* AddBeaconController.swift */; };
+		2972628A1F7E19110002D701 /* AddBuildingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262891F7E19110002D701 /* AddBuildingController.swift */; };
+		2972628C1F7E28890002D701 /* AddLotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972628B1F7E28890002D701 /* AddLotController.swift */; };
 		297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E41F6CAF8300AB2239 /* BeaconListController.swift */; };
 		297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E61F6CAF9700AB2239 /* UserListController.swift */; };
 		297850EB1F6E10F900AB2239 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850EA1F6E10F900AB2239 /* User.swift */; };
@@ -46,6 +49,9 @@
 		297262801F7DDFE10002D701 /* Lot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lot.swift; sourceTree = "<group>"; };
 		297262821F7DE5820002D701 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Building.swift; path = Models/Building.swift; sourceTree = "<group>"; };
 		297262841F7DF4CB0002D701 /* BuildingListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuildingListController.swift; path = Controllers/Lots/BuildingListController.swift; sourceTree = "<group>"; };
+		297262871F7E073B0002D701 /* AddBeaconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBeaconController.swift; path = Controllers/Beacon/AddBeaconController.swift; sourceTree = "<group>"; };
+		297262891F7E19110002D701 /* AddBuildingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBuildingController.swift; path = Controllers/Lots/AddBuildingController.swift; sourceTree = "<group>"; };
+		2972628B1F7E28890002D701 /* AddLotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddLotController.swift; path = Controllers/Lots/AddLotController.swift; sourceTree = "<group>"; };
 		297850E41F6CAF8300AB2239 /* BeaconListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconListController.swift; path = Controllers/BeaconListController.swift; sourceTree = "<group>"; };
 		297850E61F6CAF9700AB2239 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		297850EA1F6E10F900AB2239 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -117,9 +123,20 @@
 			isa = PBXGroup;
 			children = (
 				2972627E1F7DDF870002D701 /* LotListController.swift */,
+				2972628B1F7E28890002D701 /* AddLotController.swift */,
 				297262841F7DF4CB0002D701 /* BuildingListController.swift */,
+				297262891F7E19110002D701 /* AddBuildingController.swift */,
 			);
 			name = Buildings;
+			sourceTree = "<group>";
+		};
+		297262861F7E071D0002D701 /* Beacons */ = {
+			isa = PBXGroup;
+			children = (
+				297850E41F6CAF8300AB2239 /* BeaconListController.swift */,
+				297262871F7E073B0002D701 /* AddBeaconController.swift */,
+			);
+			name = Beacons;
 			sourceTree = "<group>";
 		};
 		29CF5A251F63DD5A00087325 = {
@@ -181,12 +198,12 @@
 			isa = PBXGroup;
 			children = (
 				2972626C1F7CE1BB0002D701 /* Forms */,
+				297262861F7E071D0002D701 /* Beacons */,
 				2972627D1F7DDF1E0002D701 /* Buildings */,
 				2972626A1F7CDDC90002D701 /* Users */,
 				29CF5A4B1F653A1500087325 /* MapViewController.swift */,
 				29CF5A4D1F6674C100087325 /* MenuTableViewController.swift */,
 				29CF5A4F1F67C43B00087325 /* BeaconDistanceViewController.swift */,
-				297850E41F6CAF8300AB2239 /* BeaconListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -342,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				297262851F7DF4CB0002D701 /* BuildingListController.swift in Sources */,
+				2972628A1F7E19110002D701 /* AddBuildingController.swift in Sources */,
 				29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */,
 				2972626E1F7CE1EC0002D701 /* FormViewController.swift in Sources */,
 				297262731F7CE2780002D701 /* TitleBarView.swift in Sources */,
@@ -352,6 +370,8 @@
 				297262831F7DE5820002D701 /* Building.swift in Sources */,
 				29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */,
 				297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */,
+				297262881F7E073B0002D701 /* AddBeaconController.swift in Sources */,
+				2972628C1F7E28890002D701 /* AddLotController.swift in Sources */,
 				297262781F7CE3770002D701 /* Contraints.swift in Sources */,
 				2972627A1F7D26B20002D701 /* UserChipController.swift in Sources */,
 				297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */,

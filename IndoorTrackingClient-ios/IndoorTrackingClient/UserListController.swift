@@ -18,6 +18,7 @@ class UserListController: UITableViewController {
         // Setup the tableview
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+        self.title = "All Users"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(didTapCreate))
         
         // Load all the users.

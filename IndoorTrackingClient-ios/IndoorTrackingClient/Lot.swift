@@ -135,4 +135,29 @@ class Lot {
             handler(lotsInBuilding)
         }
     }
+    
+    static func create(buildingID: UUID, lotType: String, name: String, floorLevel: Int, dimensions: LotDimensions, rssi1m: Int, phoneHeight: Double, pathLoss: Double, handler: @escaping (Lot) -> Void) {
+        
+        let dimensionParams: Parameters = ["units" : dimensions.units,
+                                         "width" : dimensions.width,
+                                         "height" : dimensions.height,
+                                         "length": dimensions.length]
+        
+        let parameters: Parameters = ["building_id" : buildingID.uuidString,
+                                      "lot_type" : lotType,
+                                      "name" : name,
+                                      "floor_level" : floorLevel,
+                                      "dimensions" : dimensionParams,
+                                      "rssi_1m_away_from_beacon" : rssi1m,
+                                      "average_phone_height" : phoneHeight,
+                                      "path_loss" : pathLoss]
+        
+        let encasedParams: Parameters = ["lot" : parameters]
+        
+        Alamofire.request("http://13.70.187.234/api/lots", method: .post, parameters: encasedParams, encoding: JSONEncoding.default).responseJSON(completionHandler: { responseJSON in
+            if let dict = responseJSON.value as? [String : Any], let newLot = Lot(dict: dict) {
+                handler(newLot)
+            }
+        })
+    }
 }

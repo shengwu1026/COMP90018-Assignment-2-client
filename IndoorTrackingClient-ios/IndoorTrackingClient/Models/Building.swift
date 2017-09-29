@@ -126,4 +126,43 @@ class Building {
             handler(buildings)
         }
     }
+    
+    static func create(address: Address, name: String, levels: [Level], handler: @escaping (Building) -> Void) {
+        
+        let floor: Parameters = ["int" : 0, "text" : "Ground Floor", "units" : "Metres", "width" : 100, "height" : 3, "length" : 100]
+        
+        let addressParams: Parameters = ["unit_number" : address.unitNumber,
+                                         "street_number" : address.streetNumber,
+                                         "street_name" : address.streetName,
+                                         "suburb": address.suburb,
+                                         "city" : address.city,
+                                         "state" : address.state,
+                                         "post_code" : address.postCode]
+        
+        let parameters: Parameters = ["name" : name,
+                                      "address" : addressParams,
+                                      "floor_levels" : [floor]]
+        
+        let encasedParams: Parameters = ["building" : parameters]
+        
+        print(parameters)
+        
+        Alamofire.request("http://13.70.187.234/api/buildings", method: .post, parameters: encasedParams, encoding: JSONEncoding.default).responseJSON(completionHandler: { responseJSON in
+            if let dict = responseJSON.value as? [String : Any], let newBuilding = Building(dict: dict) {
+                handler(newBuilding)
+            }
+        })
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+

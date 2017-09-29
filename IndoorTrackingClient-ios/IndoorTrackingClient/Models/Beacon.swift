@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum BeaconType {
     case edge
@@ -20,9 +21,11 @@ struct BeaconCoordinates {
 
 class Beacon {
     
+    var id: UUID!
     var lotID: UUID!
     var manufacturerUUID: UUID!
-    var beaconType: BeaconType!
+    var major: Int!
+    var minor: Int!
     var coordinates: BeaconCoordinates!
     var lastActivity: Date!
     
@@ -38,6 +41,10 @@ class Beacon {
                 if let jsonDict = jsonObject as? [String:Any] {
                     
                     // get the individual values
+                    // beacon id
+                    if let beaconID = jsonDict["id"] as? String {
+                        self.id = UUID.init(uuidString: beaconID)
+                    }
                     
                     // lotID
                     if let id = jsonDict["lot_id"] as? String {
@@ -48,17 +55,13 @@ class Beacon {
                     if let id = jsonDict["manufacturer_uuid"] as? String {
                         manufacturerUUID = UUID.init(uuidString: id)!
                     }
+    
+                    if let major = jsonDict["major"] as? Int {
+                        self.major = major
+                    }
                     
-                    // beaconType
-                    if let beaconType = jsonDict["lot_id"] as? String {
-                        switch(beaconType) {
-                        case "Edge":
-                            self.beaconType = .edge
-                        case "Normal":
-                            self.beaconType = .normal
-                        default:
-                            self.beaconType = .edge
-                        }
+                    if let minor = jsonDict["minor"] as? Int {
+                        self.minor = minor
                     }
                     
                     // coordinates
@@ -92,12 +95,21 @@ class Beacon {
         }
     }
     
-    static func create(lotID: UUID, manufacturerUUID: UUID, beaconType: BeaconType, coordinates: BeaconCoordinates, lastActivity: Date, handler: (Beacon) -> Void) {
+    static func create(lotID: UUID, manufacturerUUID: UUID, major: Int, minor: Int, coordinates: BeaconCoordinates, handler: @escaping (Beacon) -> Void) {
         
-        // 1: create on server
+        // 1: create parameters payload
+        let parameters: Parameters = ["lot_id" : lotID.uuidString,
+                          "manufacturer_id" : manufacturerUUID.uuidString,
+                          "coordinates" : ["x" : coordinates.x, "y" : coordinates.y],
+                           "major": major,
+                           "minor" : minor]
         
-        // 2: with ok response, complete completion handler, pass in the new beacon object.
+        let encasedParams: Parameters = ["beacon" : parameters]
+        
+        Alamofire.request("http://13.70.187.234/api/beacons", method: .post, parameters: encasedParams, encoding: JSONEncoding.default).responseString(completionHandler: { responseString in
+            if let stringValue = responseString.value, let newBeacon = Beacon(jsonString: stringValue) {
+                handler(newBeacon)
+            }
+        })
     }
-    
-    
 }

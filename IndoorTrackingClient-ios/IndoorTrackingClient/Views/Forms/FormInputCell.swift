@@ -67,6 +67,10 @@ class FormInputCell : UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setDefaultValue(text: String) {
+        self.inputTextField.text = text
+    }
+    
     func takeFocus() {
         inputTextField.becomeFirstResponder()
     }
