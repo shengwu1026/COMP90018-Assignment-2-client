@@ -11,6 +11,9 @@ class FormViewController : UIViewController {
         }
     }
     
+    var onLeftTap: (() -> Void)?
+    var onRightTap: (() -> Void)?
+    
     weak var delegate: FormDelegate?
     fileprivate(set) var formTitle: String
     
@@ -372,11 +375,11 @@ extension FormViewController : UITableViewDataSource {
 extension FormViewController : TitleBarDelegate {
     
     func didTapLeftButton() {
-        print("did tap the left button")
+        onLeftTap?()
     }
     
     func didTapRightButton() {
-        print("did tap the right button")
+        onRightTap?()
     }
 }
 

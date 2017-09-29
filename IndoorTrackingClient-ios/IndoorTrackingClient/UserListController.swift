@@ -11,6 +11,7 @@ import UIKit
 class UserListController: UITableViewController {
     
     private var users = [User]()
+    fileprivate var creationScreen: FormViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,8 +77,21 @@ class UserListController: UITableViewController {
     }
     
     func didTapCreate() {
-        let creationScreen = createForm()
-        present(creationScreen, animated: true, completion: nil)
+        
+        func didTapLeftButton() {
+            self.creationScreen?.mostRecentActiveCell?.dropFocus() // Get rid of the keyboard.
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        func didTapRightButton() {
+            creationScreen?.submit()
+        }
+        
+        creationScreen = createForm()
+        creationScreen?.onLeftTap = didTapLeftButton
+        creationScreen?.onRightTap = didTapRightButton
+        
+        present(creationScreen!, animated: true, completion: nil)
     }
     
     private func gotUsers(users: [User]) {
@@ -177,4 +191,6 @@ extension UserListController : FormDelegate {
             }
         }
     }
+    
+   
 }
