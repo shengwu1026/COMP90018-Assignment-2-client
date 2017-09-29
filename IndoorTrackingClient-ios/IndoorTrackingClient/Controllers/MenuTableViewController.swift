@@ -10,8 +10,8 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    static let options = ["Beacons In Range", "Users", "Map"]
-    static let controllers = [BeaconListController(), UserListController(), MapViewController()]
+    static let options = ["Beacons In Range", "All Users", "All Buildings", "All Lots", "Map"]
+    static let controllers = [BeaconListController(), UserListController(), BuildingListController(), LotListController(), MapViewController()]
     
     static let reuseIdentifier = "MenuCell"
 

@@ -14,6 +14,10 @@
 		297262781F7CE3770002D701 /* Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262771F7CE3770002D701 /* Contraints.swift */; };
 		2972627A1F7D26B20002D701 /* UserChipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262791F7D26B20002D701 /* UserChipController.swift */; };
 		2972627C1F7D273F0002D701 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972627B1F7D273F0002D701 /* Chip.swift */; };
+		2972627F1F7DDF870002D701 /* LotListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972627E1F7DDF870002D701 /* LotListController.swift */; };
+		297262811F7DDFE10002D701 /* Lot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262801F7DDFE10002D701 /* Lot.swift */; };
+		297262831F7DE5820002D701 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262821F7DE5820002D701 /* Building.swift */; };
+		297262851F7DF4CB0002D701 /* BuildingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262841F7DF4CB0002D701 /* BuildingListController.swift */; };
 		297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E41F6CAF8300AB2239 /* BeaconListController.swift */; };
 		297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E61F6CAF9700AB2239 /* UserListController.swift */; };
 		297850EB1F6E10F900AB2239 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850EA1F6E10F900AB2239 /* User.swift */; };
@@ -38,6 +42,10 @@
 		297262771F7CE3770002D701 /* Contraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contraints.swift; path = Helpers/Contraints.swift; sourceTree = "<group>"; };
 		297262791F7D26B20002D701 /* UserChipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserChipController.swift; path = Controllers/Users/UserChipController.swift; sourceTree = "<group>"; };
 		2972627B1F7D273F0002D701 /* Chip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chip.swift; path = Models/Chip.swift; sourceTree = "<group>"; };
+		2972627E1F7DDF870002D701 /* LotListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotListController.swift; path = Controllers/Lots/LotListController.swift; sourceTree = "<group>"; };
+		297262801F7DDFE10002D701 /* Lot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lot.swift; sourceTree = "<group>"; };
+		297262821F7DE5820002D701 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Building.swift; path = Models/Building.swift; sourceTree = "<group>"; };
+		297262841F7DF4CB0002D701 /* BuildingListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuildingListController.swift; path = Controllers/Lots/BuildingListController.swift; sourceTree = "<group>"; };
 		297850E41F6CAF8300AB2239 /* BeaconListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconListController.swift; path = Controllers/BeaconListController.swift; sourceTree = "<group>"; };
 		297850E61F6CAF9700AB2239 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		297850EA1F6E10F900AB2239 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -105,6 +113,15 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		2972627D1F7DDF1E0002D701 /* Buildings */ = {
+			isa = PBXGroup;
+			children = (
+				2972627E1F7DDF870002D701 /* LotListController.swift */,
+				297262841F7DF4CB0002D701 /* BuildingListController.swift */,
+			);
+			name = Buildings;
+			sourceTree = "<group>";
+		};
 		29CF5A251F63DD5A00087325 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +171,8 @@
 				29CF5A471F63F5EB00087325 /* Beacon.swift */,
 				297850EA1F6E10F900AB2239 /* User.swift */,
 				2972627B1F7D273F0002D701 /* Chip.swift */,
+				297262821F7DE5820002D701 /* Building.swift */,
+				297262801F7DDFE10002D701 /* Lot.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -162,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				2972626C1F7CE1BB0002D701 /* Forms */,
+				2972627D1F7DDF1E0002D701 /* Buildings */,
 				2972626A1F7CDDC90002D701 /* Users */,
 				29CF5A4B1F653A1500087325 /* MapViewController.swift */,
 				29CF5A4D1F6674C100087325 /* MenuTableViewController.swift */,
@@ -321,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				297262851F7DF4CB0002D701 /* BuildingListController.swift in Sources */,
 				29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */,
 				2972626E1F7CE1EC0002D701 /* FormViewController.swift in Sources */,
 				297262731F7CE2780002D701 /* TitleBarView.swift in Sources */,
@@ -328,12 +349,15 @@
 				29CF5A501F67C43B00087325 /* BeaconDistanceViewController.swift in Sources */,
 				29CF5A4A1F652CB700087325 /* LocationView.swift in Sources */,
 				29CF5A4E1F6674C100087325 /* MenuTableViewController.swift in Sources */,
+				297262831F7DE5820002D701 /* Building.swift in Sources */,
 				29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */,
 				297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */,
 				297262781F7CE3770002D701 /* Contraints.swift in Sources */,
 				2972627A1F7D26B20002D701 /* UserChipController.swift in Sources */,
 				297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */,
 				29CF5A4C1F653A1500087325 /* MapViewController.swift in Sources */,
+				2972627F1F7DDF870002D701 /* LotListController.swift in Sources */,
+				297262811F7DDFE10002D701 /* Lot.swift in Sources */,
 				297850EB1F6E10F900AB2239 /* User.swift in Sources */,
 				29CF5A481F63F5EB00087325 /* Beacon.swift in Sources */,
 				2972627C1F7D273F0002D701 /* Chip.swift in Sources */,
