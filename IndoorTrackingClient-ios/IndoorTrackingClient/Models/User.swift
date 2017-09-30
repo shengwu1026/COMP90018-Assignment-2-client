@@ -185,9 +185,68 @@ class User {
         }
     }
     
+    func triangulate(beaconInfo: [LocalBeaconInfo], handler: @escaping (Bool) -> Void) {
+        
+        // If this user doesn't have a chip, we can't triangulate.
+        guard self.chip != nil else {
+            handler(false)
+            return
+        }
+        
+        var params = ["beacons" : [[String : Any]]()]
+        
+        for beacon in beaconInfo {
+            let beaconDict: [String : Any] = ["uuid" : beacon.uuid.uuidString.lowercased(),
+                                              "major" : beacon.major,
+                                              "minor" : beacon.minor,
+                                              "rssi" : beacon.rssi]
+            
+            params["beacons"]!.append(beaconDict)
+        }
+        
+        if let thisUsersChipID = self.chip?.id {
+            let url = "http://13.70.187.234/api/little_brother_chips/\(thisUsersChipID)/triangulate"
+            print(url)
+            
+            Alamofire.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default).responseString(completionHandler: { response in
+                
+                //print(response.request?.httpBody)
+                print(String(data: (response.request?.httpBody)!, encoding: .utf8)!)
+                //print(response.response?.statusCode)
+                //print(response.value)
+                handler(response.error == nil)
+            })
+        }
+        else {
+            handler(false)
+        }
+    }
+    
+    // Handler only ever gets called if we receive a location back from the server.
+    func location(handler: @escaping (Double, Double) -> Void) {
+        
+        // if this user doesn't have a chip, we can't get its location.
+        guard self.chip != nil else {
+            return
+        }
+        
+        if let thisUsersChipID = self.chip?.id {
+            Alamofire.request("http://13.70.187.234/api/little_brother_chips/\(thisUsersChipID)/location").responseJSON { response in
+                if let jsonDict = response.value as? [String : Any] {
+                    if let coordinatesDict = jsonDict["coordinates"] as? [String : Any] {
+                        if let x = coordinatesDict["x"] as? Double, let y = coordinatesDict["y"] as? Double {
+                            handler(x, y)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     // Super simple helper functions on the class.
     // ###########################################
     static func create(parameters: [String:Any], handler: @escaping (User) -> Void) {
+        
         // 1: create on server
         // 2: with ok response, complete completion handler, pass in the new user object.
         
@@ -201,6 +260,7 @@ class User {
     }
     
     static func create(username: String, firstName: String, lastName: String, password: String, handler: @escaping (User) -> Void) {
+        
         // 1: create on server
         // 2: with ok response, complete completion handler, pass in the new user object.
         

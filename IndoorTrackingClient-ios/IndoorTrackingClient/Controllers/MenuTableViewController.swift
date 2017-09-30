@@ -11,7 +11,7 @@ import UIKit
 class MenuTableViewController: UITableViewController {
     
     static let options = ["All Users", "All Buildings", "Map"]
-    static let controllers = [UserListController(), BuildingListController(), MapViewController()]
+    static let controllers = [UserListController(), BuildingListController(), TrackerViewController()]
     
     static let reuseIdentifier = "MenuCell"
 

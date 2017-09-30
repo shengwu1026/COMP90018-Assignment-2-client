@@ -30,8 +30,8 @@ class LocationView : UIView {
     private var positions: [CGPoint] = [CGPoint(x: -2, y: -2), CGPoint(x: 2, y: 2)]
     private let positionColours: [UIColor] = [UIColor.red, UIColor.green, UIColor.blue]
     
-    private let personIndicatorRadius: CGFloat = 1 // roughly 1 square metres
-    private let wallThickness: CGFloat = 1
+    private let personIndicatorRadius: CGFloat = 20
+    private let wallThickness: CGFloat = 15
     
     // Public Functions
     // ################
@@ -76,15 +76,32 @@ class LocationView : UIView {
     override func draw(_ rect: CGRect) {
         // Render the walls.
         // TODO: These are temporary measurements. Make these customisable.
+        
         UIColor.black.set()
-        let wallVertices = [CGPoint(x: -20, y: -20),
-                            CGPoint(x: -10, y: -20),
-                            CGPoint(x: -10, y: -10),
-                            CGPoint(x: 0, y: -10),
-                            CGPoint(x: 0, y: -20),
-                            CGPoint(x: 20, y: -20),
-                            CGPoint(x: 20, y: 20),
-                            CGPoint(x: -20, y: 20)]
+        
+        // Phill's room vertices.
+        
+        let length: Double = 7.1 * 100
+        let width: Double = 4.93 * 100
+        
+        let alcoveLength = 1.85 * 100
+        let alcoveWidth = 0.71 * 100
+        
+        let point1 = CGPoint(x: -(length/2), y: width/2)
+        let point2 = CGPoint(x: length/2, y: width/2)
+        let point3 = CGPoint(x: length/2, y: (width/2) - alcoveLength)
+        let point4 = CGPoint(x: (length/2)-alcoveWidth, y: (width/2) - alcoveLength)
+        let point5 = CGPoint(x: (length/2)-alcoveWidth, y: -(width/2))
+        let point6 = CGPoint(x: -(length/2), y: -(width/2))
+
+        let wallVertices = [point1, point2, point3, point4, point5, point6]
+        
+        /*
+        let point1 = CGPoint(x: -100, y: 100)
+        let point2 = CGPoint(x: 100, y: 100)
+        let point3 = CGPoint(x: 100, y: -100)
+        let wallVertices = [point1, point2, point3]
+         */
         
         renderWalls(vertices: wallVertices)
         
@@ -185,7 +202,7 @@ extension CGPoint {
     
     mutating func convertToViewSpace(withCenter center: CGPoint) {
         self.x = center.x + self.x
-        self.y = center.y + self.y
+        self.y = (center.y + self.y * -1)
     }
 }
 

@@ -26,9 +26,15 @@ class MapViewController : UIViewController {
         setupMapConstraints()
         
         // deal with positions
+        /*
         displayLink = CADisplayLink(target: self, selector: #selector(animationUpdate))
         displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
         displayLink?.isPaused = false
+        */
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.timerDidFire(timer: timer)
+        }
     }
     
     @objc private func animationUpdate() {
@@ -87,6 +93,14 @@ class MapViewController : UIViewController {
         let y = centre.y + CGFloat(radius * sin(t))
         
         return CGPoint(x: x, y: y)
+    }
+    
+    func timerDidFire(timer: Timer) -> Void {
+        let user =  UserSettings.shared.currentUser
+        
+        user?.location { (x, y) in
+            self.map.setPositions(positions: [CGPoint(x: x, y: y)])
+        }
     }
 }
 

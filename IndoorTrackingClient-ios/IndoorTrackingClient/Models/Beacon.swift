@@ -97,9 +97,12 @@ class Beacon {
     
     static func create(lotID: UUID, manufacturerUUID: UUID, major: Int, minor: Int, coordinates: BeaconCoordinates, handler: @escaping (Beacon) -> Void) {
         
+        print("did try to create beacon")
         // 1: create parameters payload
+        print(coordinates.x)
+        print(coordinates.y)
         let parameters: Parameters = ["lot_id" : lotID.uuidString,
-                          "manufacturer_id" : manufacturerUUID.uuidString,
+                          "manufacturer_uuid" : manufacturerUUID.uuidString.lowercased(),
                           "coordinates" : ["x" : coordinates.x, "y" : coordinates.y],
                            "major": major,
                            "minor" : minor]
@@ -107,6 +110,7 @@ class Beacon {
         let encasedParams: Parameters = ["beacon" : parameters]
         
         Alamofire.request("http://13.70.187.234/api/beacons", method: .post, parameters: encasedParams, encoding: JSONEncoding.default).responseString(completionHandler: { responseString in
+            print(responseString)
             if let stringValue = responseString.value, let newBeacon = Beacon(jsonString: stringValue) {
                 handler(newBeacon)
             }
