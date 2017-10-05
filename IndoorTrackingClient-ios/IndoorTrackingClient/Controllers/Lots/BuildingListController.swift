@@ -16,10 +16,10 @@ class BuildingListController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(didTapAdd))
+        tableView.separatorStyle = .none
         
         // Load all the lots.
         reloadBuildings()
-        self.title = "All Buildings"
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,16 +43,15 @@ class BuildingListController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // Does this really dequeue or is it creating it every time?
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        if(cell == nil) {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell") as? LoginTableViewCell else {
+            fatalError("The dequeued cell was not the correct type: LoginTableViewCell")
         }
         
-        cell!.textLabel?.text = "\(buildings[indexPath.row].name!)"
-        cell!.detailTextLabel?.text = "\(buildings[indexPath.row].address.suburb), \(buildings[indexPath.row].address.city)"
+        cell.userLabel.text = "\(buildings[indexPath.row].name!)"
+        //cell.detailTextLabel?.text = "\(buildings[indexPath.row].address.suburb), \(buildings[indexPath.row].address.city)"
         
-        return cell!
+        return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -66,6 +65,10 @@ class BuildingListController: UITableViewController {
             lotListController.title = "Lots in \(selectedBuilding.name!)"
             self.navigationController?.pushViewController(lotListController, animated: true)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     // Other

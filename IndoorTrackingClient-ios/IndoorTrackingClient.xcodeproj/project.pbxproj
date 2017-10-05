@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		295A739D1F8646720055134E /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295A739C1F8646720055134E /* LoginTableViewCell.swift */; };
+		295A739F1F864A310055134E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295A739E1F864A310055134E /* MainNavigationController.swift */; };
 		2972626E1F7CE1EC0002D701 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972626D1F7CE1EC0002D701 /* FormViewController.swift */; };
 		297262711F7CE2630002D701 /* FormInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262701F7CE2630002D701 /* FormInputCell.swift */; };
 		297262731F7CE2780002D701 /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297262721F7CE2780002D701 /* TitleBarView.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		295A739C1F8646720055134E /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTableViewCell.swift; path = Views/LoginTableViewCell.swift; sourceTree = "<group>"; };
+		295A739E1F864A310055134E /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		2972626D1F7CE1EC0002D701 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormViewController.swift; path = Controllers/Forms/FormViewController.swift; sourceTree = "<group>"; };
 		297262701F7CE2630002D701 /* FormInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormInputCell.swift; path = Views/Forms/FormInputCell.swift; sourceTree = "<group>"; };
 		297262721F7CE2780002D701 /* TitleBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleBarView.swift; path = Views/Forms/TitleBarView.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				29CF5A4F1F67C43B00087325 /* BeaconDistanceViewController.swift */,
 				2972628F1F7E5D340002D701 /* TrackerViewController.swift */,
 				297262911F7F35CB0002D701 /* LoginViewController.swift */,
+				295A739E1F864A310055134E /* MainNavigationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				2972626F1F7CE2480002D701 /* Forms */,
 				29CF5A491F652CB700087325 /* LocationView.swift */,
+				295A739C1F8646720055134E /* LoginTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				297262731F7CE2780002D701 /* TitleBarView.swift in Sources */,
 				297262711F7CE2630002D701 /* FormInputCell.swift in Sources */,
 				29CF5A501F67C43B00087325 /* BeaconDistanceViewController.swift in Sources */,
+				295A739F1F864A310055134E /* MainNavigationController.swift in Sources */,
 				29CF5A4A1F652CB700087325 /* LocationView.swift in Sources */,
 				29CF5A4E1F6674C100087325 /* MenuTableViewController.swift in Sources */,
 				297262831F7DE5820002D701 /* Building.swift in Sources */,
@@ -390,6 +397,7 @@
 				297262811F7DDFE10002D701 /* Lot.swift in Sources */,
 				297850EB1F6E10F900AB2239 /* User.swift in Sources */,
 				297262901F7E5D340002D701 /* TrackerViewController.swift in Sources */,
+				295A739D1F8646720055134E /* LoginTableViewCell.swift in Sources */,
 				29CF5A481F63F5EB00087325 /* Beacon.swift in Sources */,
 				2972627C1F7D273F0002D701 /* Chip.swift in Sources */,
 				2972628E1F7E5BCE0002D701 /* UserSettings.swift in Sources */,

@@ -19,8 +19,8 @@ class UserListController: UITableViewController {
         // Setup the tableview
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        self.title = "All Users"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(didTapCreate))
+        self.tableView.separatorStyle = .none
         
         // Load all the users.
         reloadUsers()
@@ -47,17 +47,13 @@ class UserListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // Does this really dequeue or is it creating it every time?
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        if(cell == nil) {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell") as? LoginTableViewCell else {
+            fatalError("The dequeued cell was not the correct type: LoginTableViewCell")
         }
         
-        cell!.textLabel?.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
-        //print(users[indexPath.row].firstName)
-        cell!.detailTextLabel?.text = users[indexPath.row].id.uuidString
+        cell.userLabel.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
 
-        return cell!
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -65,6 +61,10 @@ class UserListController: UITableViewController {
         let chipAddController = UserChipController()
         chipAddController.user = user
         self.navigationController?.pushViewController(chipAddController, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     // Other

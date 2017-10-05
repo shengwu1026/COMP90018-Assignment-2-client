@@ -199,19 +199,21 @@ class User {
             let beaconDict: [String : Any] = ["uuid" : beacon.uuid.uuidString.lowercased(),
                                               "major" : beacon.major,
                                               "minor" : beacon.minor,
-                                              "rssi" : beacon.rssi]
+                                              "rssi" : beacon.rssi,
+                                              "distance_from_phone" : beacon.distance]
             
             params["beacons"]!.append(beaconDict)
         }
         
         if let thisUsersChipID = self.chip?.id {
             let url = "http://13.70.187.234/api/little_brother_chips/\(thisUsersChipID)/triangulate"
-            print(url)
+            //print(url)
             
             Alamofire.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default).responseString(completionHandler: { response in
                 
                 //print(response.request?.httpBody)
-                print(String(data: (response.request?.httpBody)!, encoding: .utf8)!)
+                //print(String(data: (response.request?.httpBody)!, encoding: .utf8)!)
+                //print(response.value?.description)
                 //print(response.response?.statusCode)
                 //print(response.value)
                 handler(response.error == nil)

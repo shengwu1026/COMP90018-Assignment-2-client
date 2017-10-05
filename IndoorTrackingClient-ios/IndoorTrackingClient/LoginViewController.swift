@@ -17,7 +17,7 @@ class LoginViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Login"
+        self.tableView.separatorStyle = .none
         
         // Load all the users.
         reloadUsers()
@@ -45,25 +45,40 @@ class LoginViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Does this really dequeue or is it creating it every time?
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        if(cell == nil) {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell") as? LoginTableViewCell else {
+            fatalError("The dequeued cell was not the correct type: LoginTableViewCell")
         }
         
-        cell!.textLabel?.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
-        //print(users[indexPath.row].firstName)
-        cell!.detailTextLabel?.text = users[indexPath.row].id.uuidString
+        cell.userLabel.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
         
-        return cell!
+        //print(users[indexPath.row].firstName)
+        //cell!.detailTextLabel?.text = users[indexPath.row].id.uuidString
+        
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
         
         if(UserSettings.shared.login(user: user)) {
+            
+            performSegue(withIdentifier: "ShowTracker", sender: self)
+            
+            /*
             let menu = MenuTableViewController()
             let navigationController = UINavigationController(rootViewController: menu)
             self.present(navigationController, animated: true, completion: nil)
+            */
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tracker = segue.destination as? TrackerViewController {
+            
         }
     }
     

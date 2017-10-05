@@ -18,10 +18,13 @@ class UserSettings {
     
     // Login
     func login(user: User) -> Bool {
+        
+        /*
         guard currentUser == nil else {
             // Already logged in.
             return false
         }
+        */
         
         self.currentUser = user
         return true
