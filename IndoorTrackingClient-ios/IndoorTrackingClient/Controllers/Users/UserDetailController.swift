@@ -36,6 +36,7 @@ class UserDetailController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         // stop timer from updating the location of the user.
+        timer?.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +62,9 @@ class UserDetailController: UIViewController {
         print("timer did fire")
         if let user = user {
             user.location { x, y in
-                self.locationView.setPositions(positions: [CGPoint(x: x, y:y)])
+                //print("x: \(x), y: \(y)")
+                // locationView takes locations in cm
+                self.locationView.setPositions(positions: [CGPoint(x: x * 100, y:y * 100)])
             }
         }
     }

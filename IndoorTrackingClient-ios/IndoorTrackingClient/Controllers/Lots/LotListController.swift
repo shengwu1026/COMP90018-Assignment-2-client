@@ -18,6 +18,8 @@ class LotListController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(didTapAdd))
         
+        self.tableView.separatorStyle = .none
+        
         // Reload the table.
         reloadLots()
     }
@@ -43,25 +45,28 @@ class LotListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Does this really dequeue or is it creating it every time?
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        if(cell == nil) {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell") as? LoginTableViewCell else {
+            fatalError("The dequeued cell was not the correct type: LoginTableViewCell")
         }
         
         let name = lots[indexPath.row].name!
         let width = lots[indexPath.row].dimensions.width
         let length = lots[indexPath.row].dimensions.length
-        cell!.textLabel?.text = "\(name)"
-        cell!.detailTextLabel?.text = "Width: \(width) Length: \(length)"
         
-        return cell!
+        cell.userLabel.text = name
+        
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedLot = lots[indexPath.row]
         let nearbyBeaconsList = BeaconListController(currentLot: selectedLot)
         
-        self.navigationController?.pushViewController(nearbyBeaconsList, animated: true)
+        //self.navigationController?.pushViewController(nearbyBeaconsList, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     // Other

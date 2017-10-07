@@ -224,6 +224,53 @@ class User {
         }
     }
     
+    func updateLocation(beaconInfo: [LocalBeaconInfo], coordinates: CGPoint, handler: @escaping (Bool) -> Void) {
+        
+        // If this user doesn't have a chip, we can't triangulate.
+        guard self.chip != nil else {
+            handler(false)
+            return
+        }
+        
+        var params: [String : Any] = ["beacons" : [[String : Any]]()]
+        
+        var arrayOfBeacons = [[String : Any]]()
+        for beacon in beaconInfo {
+            let beaconDict: [String : Any] = ["uuid" : beacon.uuid.uuidString.lowercased(),
+                                              "major" : beacon.major,
+                                              "minor" : beacon.minor,
+                                              "rssi" : beacon.rssi,
+                                              "distance_from_phone" : beacon.distance]
+            
+            arrayOfBeacons.append(beaconDict)
+        }
+        
+        // Add the beacons to the params we want to send.
+        params["beacons"] = arrayOfBeacons
+        
+        // Add in the coordinates
+        let coordinateParams: [String : Double] = ["x" : Double(coordinates.x), "y" : Double(coordinates.y)]
+        params["coordinates"] = coordinateParams
+        
+        if let thisUsersChipID = self.chip?.id {
+            let url = "http://13.70.187.234/api/little_brother_chips/\(thisUsersChipID)/location"
+            //print(url)
+            
+            Alamofire.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default).responseString(completionHandler: { response in
+                
+                //print(response.request?.httpBody)
+                //print(String(data: (response.request?.httpBody)!, encoding: .utf8)!)
+                //print(response.value?.description)
+                //print(response.response?.statusCode)
+                //print(response.value)
+                handler(response.error == nil)
+            })
+        }
+        else {
+            handler(false)
+        }
+    }
+    
     // Handler only ever gets called if we receive a location back from the server.
     func location(handler: @escaping (Double, Double) -> Void) {
         

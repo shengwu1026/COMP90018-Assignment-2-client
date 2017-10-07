@@ -23,7 +23,7 @@ class TrackerViewController : UIViewController {
     @IBOutlet weak var usersImageView: UIImageView!
     @IBOutlet weak var buildingsImageView: UIImageView!
     
-    var mapView: LocationView!
+    //var mapView: LocationView!
     
     // when this view becomes active
     
@@ -126,7 +126,13 @@ class TrackerViewController : UIViewController {
         
         if let intersection = LocationHelper.triangulate(x0: x0, y0: y0, r0: r0, x1: x1, y1: y1, r1: r1, x2: x2, y2: y2, r2: r2) { // lol
             print(intersection)
-            self.mapView.setPositions(positions: [CGPoint(x: intersection.x * 100, y: intersection.y * 100)])
+            
+            //self.mapView.setPositions(positions: [CGPoint(x: intersection.x * 100, y: intersection.y * 100)])
+            
+            currentUser.updateLocation(beaconInfo: beaconInfo, coordinates: CGPoint(x: intersection.x, y: intersection.y)) { result in
+                print(result)
+            }
+            
         }
         
         // Use the server to triangulate
@@ -147,6 +153,7 @@ class TrackerViewController : UIViewController {
          */
     }
     
+    /*
     private func setupMapView() {
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -156,6 +163,7 @@ class TrackerViewController : UIViewController {
         self.view.addSubview(mapView)
         self.view.addConstraints(constraints)
     }
+    */
     
     private func setupTapGestures() {
         

@@ -57,7 +57,7 @@ class BuildingListController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Show a list of all the lots for this building.
-        let selectedBuilding = self.buildings[indexPath.row]
+        
         
         /*
         Lot.lotsForBuildingWithID(buildingID: selectedBuilding.id) { lots in
@@ -75,6 +75,10 @@ class BuildingListController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let row = self.tableView.indexPathForSelectedRow?.row {
+            selectedBuilding = self.buildings[row]
+        }
         
         if let ident = segue.identifier {
             switch(ident) {
