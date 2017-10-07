@@ -23,6 +23,8 @@ class TrackerViewController : UIViewController {
     @IBOutlet weak var usersImageView: UIImageView!
     @IBOutlet weak var buildingsImageView: UIImageView!
     
+    var mapView: LocationView!
+    
     // when this view becomes active
     
         // we get the three strongest beacons
@@ -31,7 +33,7 @@ class TrackerViewController : UIViewController {
     
         // this continues in the background
     
-    var mapView = LocationView()
+    //var mapView = LocationView()
     
     var locationManager: CLLocationManager!
     let proximityUUID = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")! // This is the default for our beacons.

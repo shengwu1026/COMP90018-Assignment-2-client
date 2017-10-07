@@ -18,16 +18,16 @@ import UIKit
 class LocationView : UIView {
     
     private let maxZoom: CGFloat = 10.0
-    private let minZoom: CGFloat = 0.5
+    private let minZoom: CGFloat = 0.2
     
-    private var scale: CGFloat = 1.0 {
+    private var scale: CGFloat = 0.4 {
         didSet {
             scale = max(minZoom, min(maxZoom, scale))
         }
     }
     
     // TODO: These are temporary positions, get rid of them and add them in the init.
-    private var positions: [CGPoint] = [CGPoint(x: -2, y: -2), CGPoint(x: 2, y: 2)]
+    private var positions: [CGPoint] = []
     private let positionColours: [UIColor] = [UIColor.red, UIColor.green, UIColor.blue]
     
     private let personIndicatorRadius: CGFloat = 20

@@ -11,6 +11,7 @@ import UIKit
 class BuildingListController: UITableViewController {
     
     private var buildings = [Building]()
+    private var selectedBuilding: Building?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class BuildingListController: UITableViewController {
         // Show a list of all the lots for this building.
         let selectedBuilding = self.buildings[indexPath.row]
         
+        /*
         Lot.lotsForBuildingWithID(buildingID: selectedBuilding.id) { lots in
             let lotListController = LotListController()
             lotListController.lots = lots
@@ -65,10 +67,26 @@ class BuildingListController: UITableViewController {
             lotListController.title = "Lots in \(selectedBuilding.name!)"
             self.navigationController?.pushViewController(lotListController, animated: true)
         }
+         */
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let ident = segue.identifier {
+            switch(ident) {
+            case "ShowLots":
+                if let destination = segue.destination as? LotListController {
+                    destination.building = selectedBuilding
+                }
+                break
+            default:
+                break
+            }
+        }
     }
     
     // Other

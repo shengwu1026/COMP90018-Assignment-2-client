@@ -29,6 +29,7 @@
 		297850E51F6CAF8300AB2239 /* BeaconListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E41F6CAF8300AB2239 /* BeaconListController.swift */; };
 		297850E71F6CAF9700AB2239 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850E61F6CAF9700AB2239 /* UserListController.swift */; };
 		297850EB1F6E10F900AB2239 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297850EA1F6E10F900AB2239 /* User.swift */; };
+		2999C8E21F878CFA0075D505 /* UserDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999C8E11F878CFA0075D505 /* UserDetailController.swift */; };
 		29CF5A321F63DD5A00087325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF5A311F63DD5A00087325 /* AppDelegate.swift */; };
 		29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF5A331F63DD5A00087325 /* ViewController.swift */; };
 		29CF5A371F63DD5A00087325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CF5A351F63DD5A00087325 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		297850E41F6CAF8300AB2239 /* BeaconListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconListController.swift; path = Controllers/BeaconListController.swift; sourceTree = "<group>"; };
 		297850E61F6CAF9700AB2239 /* UserListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
 		297850EA1F6E10F900AB2239 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		2999C8E11F878CFA0075D505 /* UserDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailController.swift; path = Controllers/Users/UserDetailController.swift; sourceTree = "<group>"; };
 		29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndoorTrackingClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CF5A311F63DD5A00087325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29CF5A331F63DD5A00087325 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				297850E61F6CAF9700AB2239 /* UserListController.swift */,
 				297262791F7D26B20002D701 /* UserChipController.swift */,
+				2999C8E11F878CFA0075D505 /* UserDetailController.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				297262921F7F35CB0002D701 /* LoginViewController.swift in Sources */,
 				297262851F7DF4CB0002D701 /* BuildingListController.swift in Sources */,
 				2972628A1F7E19110002D701 /* AddBuildingController.swift in Sources */,
+				2999C8E21F878CFA0075D505 /* UserDetailController.swift in Sources */,
 				29CF5A341F63DD5A00087325 /* ViewController.swift in Sources */,
 				2972626E1F7CE1EC0002D701 /* FormViewController.swift in Sources */,
 				297262731F7CE2780002D701 /* TitleBarView.swift in Sources */,

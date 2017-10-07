@@ -245,6 +245,13 @@ class User {
         }
     }
     
+    func buildingAndLot(handler: @escaping (String) -> Void) {
+        
+        
+        
+        
+    }
+    
     // Super simple helper functions on the class.
     // ###########################################
     static func create(parameters: [String:Any], handler: @escaping (User) -> Void) {

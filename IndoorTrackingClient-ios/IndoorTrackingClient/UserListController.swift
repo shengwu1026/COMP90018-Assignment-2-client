@@ -11,6 +11,8 @@ import UIKit
 class UserListController: UITableViewController {
     
     private var users = [User]()
+    private var selectedUser: User?
+    
     fileprivate var creationScreen: FormViewController?
 
     override func viewDidLoad() {
@@ -57,14 +59,49 @@ class UserListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = users[indexPath.row]
+        
+        selectedUser = users[indexPath.row]
+        let userHasChip = selectedUser?.chip != nil
+        
+        if userHasChip {
+            performSegue(withIdentifier: "ShowUserDetails", sender: self)
+        }
+        else {
+            performSegue(withIdentifier: "ShowChip", sender: self)
+        }
+        
+        /*
+        
         let chipAddController = UserChipController()
         chipAddController.user = user
         self.navigationController?.pushViewController(chipAddController, animated: true)
+         */
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let ident = segue.identifier else {
+            return
+        }
+        
+        switch (ident) {
+        case "ShowUserDetails":
+            if let userDetailController = segue.destination as? UserDetailController {
+                if let user = selectedUser {
+                    userDetailController.user = user
+                }                
+            }
+        case "ShowChip":
+            if let chipController = segue.destination as? UserChipController {
+                chipController.user = selectedUser
+            }
+        default:
+            //do nothing
+            break
+        }
     }
     
     // Other

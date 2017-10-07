@@ -10,11 +10,10 @@ import UIKit
 
 class UserChipController: UIViewController {
 
-    var user: User? {
-        didSet {
-            reload()
-        }
-    }
+    @IBOutlet weak var chipImage: UIImageView!
+    @IBOutlet weak var attachChipImageVIew: UIImageView!
+    
+    var user: User?
     
     var chipIDLabel = UILabel()
     var detailInfoLabel = UILabel()
@@ -22,8 +21,8 @@ class UserChipController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Chip Details"
-        self.view.backgroundColor = UIColor.white
+        self.title = user?.firstName ?? "User"
+        setupButton()
         reload()
     }
 
@@ -32,50 +31,48 @@ class UserChipController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     func reload() {
-        setupBarButtonItems()
         setupLabel()
+        reloadUI()
     }
-
-    private func setupBarButtonItems() {
-        // Check if the user has an associated chip.
-        if(user?.chip == nil) {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Chip", style: .plain, target: self, action: #selector(didTapAddChip))
+    
+    private func setupButton() {
+        let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(didTapAddChip))
+        self.attachChipImageVIew.addGestureRecognizer(tapGestureRecogniser)
+        self.attachChipImageVIew.isUserInteractionEnabled = true
+    }
+    
+    private func reloadUI() {
+        
+        if user?.chip == nil {
+            // We should show the attach chip button.
+            attachChipImageVIew.isHidden = false
         }
         else {
-            self.navigationItem.rightBarButtonItem = nil
+            // We attached a chip, so show its details.
+            attachChipImageVIew.isHidden = true
+            setupLabel()
         }
     }
     
     private func setupLabel() {
         
         chipIDLabel.removeFromSuperview()
-        detailInfoLabel.removeFromSuperview()
-        
         chipIDLabel.translatesAutoresizingMaskIntoConstraints = false
-        chipIDLabel.sizeToFit()
+        chipIDLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        chipIDLabel.textColor = UIColor.white
         
-        if let firstName = user?.firstName, let _ = user?.chip?.id {
-            detailInfoLabel.text = "Chip UUID for \(firstName):"
+        if let uuid = user?.chip?.id {
+            chipIDLabel.text = "\(uuid)"
         }
         
-        detailInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         chipIDLabel.sizeToFit()
         
-        let constraints = constraintsToCentreView(chipIDLabel, inContainingView: self.view)
+        var constraints = constraintToChainBottomView(chipIDLabel, toTopView: chipImage)
+        constraints += equalityConstraintForView(chipIDLabel, andAttribute: .centerX, withView: chipImage)
+        
         self.view.addSubview(chipIDLabel)
         self.view.addConstraints(constraints)
-        
-
-        var topLabelConstraints = constraintToChainBottomView(chipIDLabel, toTopView: detailInfoLabel, withConstant: 10)
-        topLabelConstraints.append(NSLayoutConstraint(item: detailInfoLabel, attribute: NSLayoutAttribute.centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0))
-        self.view.addSubview(detailInfoLabel)
-        self.view.addConstraints(topLabelConstraints)
-        
-        if let chipID = user?.chip?.id {
-            updateLabelText(text: chipID)
-        }
     }
     
     private func updateLabelText(text: String) {
@@ -84,7 +81,6 @@ class UserChipController: UIViewController {
     }
     
     func didTapAddChip() {
-        print("did tap add chip")
         user?.addNewChip { chipID in
             self.reload()
         }

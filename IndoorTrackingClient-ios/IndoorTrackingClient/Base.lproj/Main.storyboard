@@ -329,7 +329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzJ-th-sTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="3093"/>
+            <point key="canvasLocation" x="33" y="3092"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5aY-dU-XFk">
@@ -391,6 +391,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="PEOPLE" id="Jte-fu-GGe"/>
+                    <connections>
+                        <segue destination="39o-7l-Jct" kind="show" identifier="ShowChip" id="emC-mJ-510"/>
+                        <segue destination="jFg-R5-hk5" kind="show" identifier="ShowUserDetails" id="ZCS-bG-b0F"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmL-x3-xGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -430,6 +434,7 @@
                                 <connections>
                                     <outlet property="userImageLabel" destination="aIs-vW-Tjj" id="FTx-Hd-W6c"/>
                                     <outlet property="userLabel" destination="VXS-nK-sx6" id="wbC-Ya-E67"/>
+                                    <segue destination="U0D-Yz-VFb" kind="show" identifier="ShowLots" id="HAa-Lo-dub"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -444,9 +449,178 @@
             </objects>
             <point key="canvasLocation" x="1541.5999999999999" y="3822.6386806596706"/>
         </scene>
+        <!--USER DETAILS-->
+        <scene sceneID="uSC-Ei-bE1">
+            <objects>
+                <viewController id="jFg-R5-hk5" customClass="UserDetailController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2XD-OR-BY7"/>
+                        <viewControllerLayoutGuide type="bottom" id="OpC-MF-u7v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eg7-S4-crm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="Xb1-dg-A5C">
+                                <rect key="frame" x="36" y="84" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29650042809999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1Zm-i1-gFC"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ito-qI-3BS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRr-gK-art">
+                                <rect key="frame" x="124" y="126" width="149.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firstname Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIU-D3-3VG">
+                                <rect key="frame" x="124" y="94" width="174" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lF-gy-UVB">
+                                <rect key="frame" x="0.0" y="172" width="375" height="495"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cye-8x-gH0" customClass="LocationView" customModule="IndoorTrackingClient" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="359" height="479"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.67467068386751272" green="0.34335499754648791" blue="0.36231525754828775" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cye-8x-gH0" secondAttribute="trailing" constant="8" id="5ER-Z1-ZMf"/>
+                                    <constraint firstItem="Cye-8x-gH0" firstAttribute="top" secondItem="8lF-gy-UVB" secondAttribute="top" constant="8" id="ZRh-IS-If8"/>
+                                    <constraint firstItem="Cye-8x-gH0" firstAttribute="leading" secondItem="8lF-gy-UVB" secondAttribute="leading" constant="8" id="hOo-O3-d0E"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cye-8x-gH0" secondAttribute="bottom" constant="8" id="hTi-T9-C0l"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xb1-dg-A5C" firstAttribute="top" secondItem="2XD-OR-BY7" secondAttribute="bottom" constant="20" id="3lJ-c6-9Iq"/>
+                            <constraint firstItem="8lF-gy-UVB" firstAttribute="top" secondItem="Xb1-dg-A5C" secondAttribute="bottom" constant="8" id="6s0-nL-PMz"/>
+                            <constraint firstItem="qIU-D3-3VG" firstAttribute="top" secondItem="Xb1-dg-A5C" secondAttribute="top" constant="10" id="8E1-xf-bAK"/>
+                            <constraint firstItem="OpC-MF-u7v" firstAttribute="top" secondItem="8lF-gy-UVB" secondAttribute="bottom" id="P3p-TG-PYL"/>
+                            <constraint firstItem="8lF-gy-UVB" firstAttribute="leading" secondItem="Eg7-S4-crm" secondAttribute="leading" id="Xml-J5-Tm4"/>
+                            <constraint firstAttribute="trailing" secondItem="8lF-gy-UVB" secondAttribute="trailing" id="Xnl-4b-EzG"/>
+                            <constraint firstItem="Xb1-dg-A5C" firstAttribute="leading" secondItem="Eg7-S4-crm" secondAttribute="leadingMargin" constant="20" id="ZNH-x1-EiM"/>
+                            <constraint firstItem="DRr-gK-art" firstAttribute="top" secondItem="qIU-D3-3VG" secondAttribute="bottom" constant="8" id="cbx-yF-GuK"/>
+                            <constraint firstItem="DRr-gK-art" firstAttribute="leading" secondItem="Xb1-dg-A5C" secondAttribute="trailing" constant="8" id="jbL-kh-N0z"/>
+                            <constraint firstItem="DRr-gK-art" firstAttribute="top" secondItem="qIU-D3-3VG" secondAttribute="bottom" constant="8" id="uD7-U4-XnG"/>
+                            <constraint firstItem="qIU-D3-3VG" firstAttribute="leading" secondItem="Xb1-dg-A5C" secondAttribute="trailing" constant="8" id="v3Q-me-mmu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="USER DETAILS" id="fgz-fG-bNf"/>
+                    <connections>
+                        <outlet property="currentLocationLabelView" destination="DRr-gK-art" id="nmM-bF-8eP"/>
+                        <outlet property="locationView" destination="Cye-8x-gH0" id="yOg-fc-2oe"/>
+                        <outlet property="nameLabelView" destination="qIU-D3-3VG" id="5N0-Jt-uVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ulb-8g-ZGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="4673"/>
+        </scene>
+        <!--CHIP-->
+        <scene sceneID="I1s-mf-jry">
+            <objects>
+                <viewController title="CHIP" id="39o-7l-Jct" customClass="UserChipController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4IG-AZ-39D"/>
+                        <viewControllerLayoutGuide type="bottom" id="v4e-IQ-PRt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k2F-fc-wkD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addchip" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-Uk-sDj">
+                                <rect key="frame" x="102" y="441.5" width="170" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="GAa-BV-Iyr"/>
+                                    <constraint firstAttribute="height" constant="50" id="vhQ-0m-KU6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chip" translatesAutoresizingMaskIntoConstraints="NO" id="wFZ-Iv-3zf">
+                                <rect key="frame" x="87" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="WZL-3H-ss7"/>
+                                    <constraint firstAttribute="height" constant="200" id="aT8-zF-xnh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wFZ-Iv-3zf" firstAttribute="centerX" secondItem="k2F-fc-wkD" secondAttribute="centerX" id="33X-A7-T8E"/>
+                            <constraint firstItem="7RF-Uk-sDj" firstAttribute="top" secondItem="wFZ-Iv-3zf" secondAttribute="bottom" constant="8" id="BHc-q3-AP6"/>
+                            <constraint firstItem="wFZ-Iv-3zf" firstAttribute="centerY" secondItem="k2F-fc-wkD" secondAttribute="centerY" id="Qrp-zM-2Fr"/>
+                            <constraint firstItem="7RF-Uk-sDj" firstAttribute="centerX" secondItem="k2F-fc-wkD" secondAttribute="centerX" id="qrI-EA-wrv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="attachChipImageVIew" destination="7RF-Uk-sDj" id="OOe-iP-NRw"/>
+                        <outlet property="chipImage" destination="wFZ-Iv-3zf" id="iQA-5R-Val"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFS-FE-WIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080.8" y="4672.7136431784111"/>
+        </scene>
+        <!--LOTS-->
+        <scene sceneID="17t-6j-LUQ">
+            <objects>
+                <tableViewController id="U0D-Yz-VFb" customClass="LotListController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pNn-La-Rad">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="WAm-TQ-5Be" customClass="LoginTableViewCell" customModule="IndoorTrackingClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WAm-TQ-5Be" id="9MO-9R-tyH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buildings" translatesAutoresizingMaskIntoConstraints="NO" id="jCe-cG-TB6">
+                                            <rect key="frame" x="30" y="20" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29650042809999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtB-tW-3wX">
+                                            <rect key="frame" x="78" y="30" width="289" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userImageLabel" destination="jCe-cG-TB6" id="JHb-Ge-HMn"/>
+                                    <outlet property="userLabel" destination="xtB-tW-3wX" id="PYJ-ig-fRD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="U0D-Yz-VFb" id="Ale-Ky-pMk"/>
+                            <outlet property="delegate" destination="U0D-Yz-VFb" id="XTD-i1-Dka"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LOTS" id="OSt-vA-abj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xjz-8i-WTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2396" y="3823"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="addchip" width="570" height="158"/>
         <image name="buildings" width="34" height="35"/>
+        <image name="chip" width="219" height="219"/>
         <image name="users" width="35" height="35"/>
         <image name="wireless" width="75" height="83"/>
     </resources>
