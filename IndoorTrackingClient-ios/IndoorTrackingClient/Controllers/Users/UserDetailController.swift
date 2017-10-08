@@ -50,6 +50,10 @@ class UserDetailController: UIViewController {
             return
         }
         
+        user?.currentLotDimensions { (length, width) in
+            self.locationView.dimensions = (length, width)
+        }
+        
         // user was set, so make sure we update the ui.
         if let firstName = user?.firstName,
            let lastName = user?.lastName {
@@ -69,7 +73,6 @@ class UserDetailController: UIViewController {
                 self.currentLocationLabelView.text = "\(building), \(room)"
                 
                 // Update the position in the room.
-                user.
                 self.locationView.setPositionForID(user.id.uuidString, position: CGPoint(x: x, y: y))
             }
         }

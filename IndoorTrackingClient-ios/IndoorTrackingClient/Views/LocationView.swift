@@ -36,6 +36,14 @@ class LocationView : UIView {
     private let personIndicatorRadius: CGFloat = 20
     private let wallThickness: CGFloat = 15
     
+    public var dimensions: (Double, Double) = (5.0, 5.0) {
+        didSet {
+            calculateWallVertices()
+        }
+    }
+    
+    private var wallVertices = [CGPoint]()
+    
     private var colorIndex = 0
     private var nextColor: UIColor {
         get {
@@ -101,33 +109,8 @@ class LocationView : UIView {
     
     override func draw(_ rect: CGRect) {
         // Render the walls.
-        // TODO: These are temporary measurements. Make these customisable.
         
         UIColor.black.set()
-        
-        // Phill's room vertices.
-        
-        let length: Double = 7.1 * 100
-        let width: Double = 4.93 * 100
-        
-        let alcoveLength = 1.85 * 100
-        let alcoveWidth = 0.71 * 100
-        
-        let point1 = CGPoint(x: -(length/2), y: width/2)
-        let point2 = CGPoint(x: length/2, y: width/2)
-        let point3 = CGPoint(x: length/2, y: (width/2) - alcoveLength)
-        let point4 = CGPoint(x: (length/2)-alcoveWidth, y: (width/2) - alcoveLength)
-        let point5 = CGPoint(x: (length/2)-alcoveWidth, y: -(width/2))
-        let point6 = CGPoint(x: -(length/2), y: -(width/2))
-
-        let wallVertices = [point1, point2, point3, point4, point5, point6]
-        
-        /*
-        let point1 = CGPoint(x: -100, y: 100)
-        let point2 = CGPoint(x: 100, y: 100)
-        let point3 = CGPoint(x: 100, y: -100)
-        let wallVertices = [point1, point2, point3]
-         */
         
         renderWalls(vertices: wallVertices)
         
@@ -174,6 +157,19 @@ class LocationView : UIView {
     }
     
     // Rendering helpers
+    private func calculateWallVertices() {
+        let length = self.dimensions.0 * 100
+        let width = self.dimensions.1 * 100
+        
+        let v1 = CGPoint(x: -length/2, y: width/2)
+        let v2 = CGPoint(x: length/2, y: width/2)
+        let v3 = CGPoint(x: length/2, y: -width/2)
+        let v4 = CGPoint(x: -length/2, y: -width/2)
+        
+        self.wallVertices = [v1, v2, v3, v4]
+        setNeedsDisplay()
+    }
+    
     private func renderWalls(vertices: [CGPoint]) {
         // Ensure we have at least 3 points.
         guard vertices.count >= 3 else {

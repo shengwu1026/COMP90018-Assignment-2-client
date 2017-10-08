@@ -299,6 +299,30 @@ class User {
         }
     }
     
+    // handler gets (length, width) of the current lot.
+    func currentLotDimensions(handler: @escaping (Double, Double) -> Void) {
+        
+        // if this user doesn't have a chip, we can't get its location.
+        guard self.chip != nil else {
+            return
+        }
+        
+        if let thisUsersChipID = self.chip?.id {
+            Alamofire.request("http://13.70.187.234/api/little_brother_chips/\(thisUsersChipID)/location").responseJSON { response in
+                if let jsonDict = response.value as? [String : Any] {
+                    if let lotDict = jsonDict["lot"] as? [String : Any] {
+                        if let dimensionsDict = lotDict["dimensions"] as? [String : Any] {
+                            if let length = dimensionsDict["length"] as? Double,
+                                let width = dimensionsDict["width"] as? Double {
+                                handler(length, width)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     // Super simple helper functions on the class.
     // ###########################################
     static func create(parameters: [String:Any], handler: @escaping (User) -> Void) {

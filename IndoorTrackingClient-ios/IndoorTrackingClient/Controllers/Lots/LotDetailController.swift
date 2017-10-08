@@ -50,6 +50,11 @@ class LotDetailController: UIViewController {
             return
         }
         
+        if let length = lot?.dimensions.length, let width = lot?.dimensions.width {
+            locationView.dimensions = (length, width)
+        }
+        
+        
         // user was set, so make sure we update the ui.
         if let buildingName = lot?.building.name,
             let lotName = lot?.name {
