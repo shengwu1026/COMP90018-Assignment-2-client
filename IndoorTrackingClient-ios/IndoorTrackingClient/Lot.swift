@@ -71,6 +71,29 @@ class Lot {
         }
     }
     
+    func people(handler: @escaping ([(String, CGPoint)]) -> Void) {
+
+        Alamofire.request("http://13.70.187.234/api/lots/\(id!)/little_brother_chips").responseJSON { response in
+        
+            if let responseDict = response.value as? [String: Any] {
+                if let arrayOfPeople = responseDict["little_brother_chips"] as? [[String : Any]] {
+                    
+                    var returnArray = [(String, CGPoint)]()
+                    
+                    for object in arrayOfPeople {
+                        if let chipID = object["id"] as? String,
+                        let x = (object["coordinates"] as? [String : Double])?["x"],
+                            let y = (object["coordinates"] as? [String : Double])?["y"] {
+                            returnArray.append((chipID, CGPoint(x: x, y: y)))
+                        }
+                    }
+                    
+                    handler(returnArray)
+                }
+            }
+        }
+    }
+    
     static func all(handler: @escaping ([Lot]) -> Void) {
         
         // Get all the buildings, as we want to attach the building that this lot belongs to.
@@ -136,7 +159,7 @@ class Lot {
         }
     }
     
-    static func create(buildingID: UUID, lotType: String, name: String, floorLevel: Int, dimensions: LotDimensions, rssi1m: Int, phoneHeight: Double, pathLoss: Double, handler: @escaping (Lot) -> Void) {
+    static func create(buildingID: UUID, lotType: String, name: String, floorLevel: Int, dimensions: LotDimensions, handler: @escaping (Lot) -> Void) {
         
         let dimensionParams: Parameters = ["units" : dimensions.units,
                                          "width" : dimensions.width,
@@ -147,14 +170,12 @@ class Lot {
                                       "lot_type" : lotType,
                                       "name" : name,
                                       "floor_level" : floorLevel,
-                                      "dimensions" : dimensionParams,
-                                      "rssi_1m_away_from_beacon" : rssi1m,
-                                      "average_phone_height" : phoneHeight,
-                                      "path_loss" : pathLoss]
+                                      "dimensions" : dimensionParams]
         
         let encasedParams: Parameters = ["lot" : parameters]
         
         Alamofire.request("http://13.70.187.234/api/lots", method: .post, parameters: encasedParams, encoding: JSONEncoding.default).responseJSON(completionHandler: { responseJSON in
+            
             if let dict = responseJSON.value as? [String : Any], let newLot = Lot(dict: dict) {
                 handler(newLot)
             }

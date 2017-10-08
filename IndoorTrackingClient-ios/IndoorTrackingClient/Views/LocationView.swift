@@ -27,17 +27,43 @@ class LocationView : UIView {
     }
     
     // TODO: These are temporary positions, get rid of them and add them in the init.
-    private var positions: [CGPoint] = []
-    private let positionColours: [UIColor] = [UIColor.red, UIColor.green, UIColor.blue]
+    //private var positions: [CGPoint] = []
+    private let colours: [UIColor] = [UIColor.red, UIColor.green, UIColor.blue, UIColor.yellow, UIColor.brown, UIColor.black]
+    
+    private var positions = [String : CGPoint]()
+    private var positionColours = [String : UIColor]()
     
     private let personIndicatorRadius: CGFloat = 20
     private let wallThickness: CGFloat = 15
     
+    private var colorIndex = 0
+    private var nextColor: UIColor {
+        get {
+            let color = colours[colorIndex]
+            colorIndex = (colorIndex + 1) % colours.count
+            return color
+        }
+    }
+    
     // Public Functions
     // ################
     
+    /*
     public func setPositions(positions: [CGPoint]) {
         self.positions = positions
+        setNeedsDisplay()
+    }
+    */
+    
+    public func setPositionForID(_ id: String, position: CGPoint) {
+        
+        positions[id] = position
+        
+        // Choose a colour for this id.
+        if positionColours[id] == nil {
+            positionColours[id] = nextColor
+        }
+        
         setNeedsDisplay()
     }
     
@@ -184,10 +210,15 @@ class LocationView : UIView {
         
     }
     
-    private func renderPositions(_ positions: [CGPoint]) {
+    private func renderPositions(_ positions: [String : CGPoint]) {
         UIColor.red.set()
-        for var position in positions {
-            position.multiply(factor: scale)
+        
+        // We pass positions in metres, we multiply by 100 to cm for the map view
+        // Map view units are in cm.
+        for (id, var position) in positions {
+            positionColours[id]?.set()
+            position.multiply(factor: 100) // to cm
+            position.multiply(factor: scale) // take into account the zoom scale
             position.convertToViewSpace(withCenter: self.frame.center)
             drawCircleAtPoint(point: position, radius: personIndicatorRadius * scale)
         }

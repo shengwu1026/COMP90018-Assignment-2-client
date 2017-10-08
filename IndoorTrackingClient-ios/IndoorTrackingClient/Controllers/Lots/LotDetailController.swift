@@ -1,27 +1,27 @@
 //
-//  UserDetailController.swift
+//  LotDetailController.swift
 //  IndoorTrackingClient
 //
-//  Created by Phillip McKenna on 6/10/17.
+//  Created by Phillip McKenna on 7/10/17.
 //  Copyright © 2017 IDC. All rights reserved.
 //
 
 import UIKit
 
-class UserDetailController: UIViewController {
+class LotDetailController: UIViewController {
     
     @IBOutlet weak var nameLabelView: UILabel!
-    @IBOutlet weak var currentLocationLabelView: UILabel!
+    @IBOutlet weak var numberOfPeopleLabel: UILabel!
     
     @IBOutlet weak var locationView: LocationView!
     
-    var user: User?
-
+    var lot: Lot?
+    
     private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.onTimerUpdate()
         }
@@ -38,7 +38,7 @@ class UserDetailController: UIViewController {
         // stop timer from updating the location of the user.
         timer?.invalidate()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,20 +46,36 @@ class UserDetailController: UIViewController {
     
     func reload() {
         
-        guard user != nil else {
+        guard lot != nil else {
             return
         }
         
         // user was set, so make sure we update the ui.
-        if let firstName = user?.firstName,
-           let lastName = user?.lastName {
-            nameLabelView.text = "\(firstName) \(lastName)"
+        if let buildingName = lot?.building.name,
+            let lotName = lot?.name {
+            nameLabelView.text = "\(buildingName) \(lotName)"
         }
     }
     
     func onTimerUpdate() {
-        print("timer did fire")
-
+        
+        if let lot = lot {
+            lot.people { people in
+             
+                // Update the person count.
+                let count = people.count
+                let pluralOrNot = count == 1 ? "person" : "people"
+                self.numberOfPeopleLabel.text = "\(count) \(pluralOrNot)"
+                
+                // Update the locations on the map.
+                for person in people {
+                    self.locationView.setPositionForID(person.0, position: person.1)
+                }
+            }
+        }
+        
+        
+        /*
         if let user = user {
             user.location { building, room, x, y in
                 print("x: \(x), y: \(y)")
@@ -69,20 +85,20 @@ class UserDetailController: UIViewController {
                 self.currentLocationLabelView.text = "\(building), \(room)"
                 
                 // Update the position in the room.
-                user.
-                self.locationView.setPositionForID(user.id.uuidString, position: CGPoint(x: x, y: y))
+                self.locationView.setPositions(positions: [CGPoint(x: x * 100, y:y * 100)])
             }
         }
+        */
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

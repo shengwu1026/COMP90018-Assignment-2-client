@@ -39,12 +39,7 @@ class AddLotController : FormViewController {
         dimensionsSection.addField(InputField(id: "height", title: "Height", isRequired: true))
         dimensionsSection.addField(InputField(id: "length", title: "Length", isRequired: true))
         
-        let beaconInfoSection = Section(name: "Beacon Info")
-        beaconInfoSection.addField(InputField(id: "rssi_1m_away_from_beacon", title: "1M RSSI", isRequired: true))
-        beaconInfoSection.addField(InputField(id: "average_phone_height", title: "Phone Height", isRequired: true))
-        beaconInfoSection.addField(InputField(id: "path_loss", title: "Path Loss", isRequired: true))
-        
-        return [lotSection, dimensionsSection, beaconInfoSection]
+        return [lotSection, dimensionsSection]
     }
     
     override func didTapLeftButton() {
@@ -85,8 +80,6 @@ class AddLotController : FormViewController {
                         cell.setDefaultValue(text: building.id.uuidString)
                     case "units":
                         cell.setDefaultValue(text: "metres")
-                    case "average_phone_height":
-                        cell.setDefaultValue(text: "1")
                     default: break
                     }
                     

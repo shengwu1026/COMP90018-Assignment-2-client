@@ -42,9 +42,9 @@ class MapViewController : UIViewController {
         
         let p1 = getPosition(centre: CGPoint(x: -2, y: -2), radius: 3, t: t)
         let p2 = getPosition(centre: CGPoint(x: 2, y: 2), radius: 3, t: t + Double.pi)
-        let positions = [p1, p2]
         
-        map.setPositions(positions: positions)
+        map.setPositionForID("one", position: p1)
+        map.setPositionForID("two", position: p2)
     }
     
     private func timeSinceLastFrame() -> Double {
@@ -98,8 +98,8 @@ class MapViewController : UIViewController {
     func timerDidFire(timer: Timer) -> Void {
         let user =  UserSettings.shared.currentUser
         
-        user?.location { (x, y) in
-            self.map.setPositions(positions: [CGPoint(x: x, y: y)])
+        user?.location { (_, _, x, y) in
+            self.map.setPositionForID((user?.id.uuidString)!, position: CGPoint(x: x, y: y))
         }
     }
 }

@@ -398,7 +398,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmL-x3-xGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="3822.6386806596706"/>
+            <point key="canvasLocation" x="385" y="4007"/>
         </scene>
         <!--BUILDINGS-->
         <scene sceneID="cEx-06-Tlv">
@@ -447,7 +447,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2b-eO-Coe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541.5999999999999" y="3822.6386806596706"/>
+            <point key="canvasLocation" x="1750" y="4007"/>
         </scene>
         <!--USER DETAILS-->
         <scene sceneID="uSC-Ei-bE1">
@@ -522,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulb-8g-ZGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="4673"/>
+            <point key="canvasLocation" x="-65" y="4857"/>
         </scene>
         <!--CHIP-->
         <scene sceneID="I1s-mf-jry">
@@ -566,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFS-FE-WIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="4672.7136431784111"/>
+            <point key="canvasLocation" x="684" y="4857"/>
         </scene>
         <!--LOTS-->
         <scene sceneID="17t-6j-LUQ">
@@ -611,10 +611,88 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="LOTS" id="OSt-vA-abj"/>
+                    <connections>
+                        <segue destination="K5z-Ap-tdI" kind="show" identifier="ShowLotDetail" id="p4o-Ou-YIl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjz-8i-WTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="3823"/>
+            <point key="canvasLocation" x="1750" y="4857"/>
+        </scene>
+        <!--LOT DETAILS-->
+        <scene sceneID="Gbp-nC-TmU">
+            <objects>
+                <viewController id="K5z-Ap-tdI" customClass="LotDetailController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G4J-HC-sVG"/>
+                        <viewControllerLayoutGuide type="bottom" id="eZl-Wr-tIM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6O8-wr-iFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buildings" translatesAutoresizingMaskIntoConstraints="NO" id="4jD-Cq-6jt">
+                                <rect key="frame" x="36" y="84" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29650042809999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Vt1-wn-zx1"/>
+                                    <constraint firstAttribute="height" constant="80" id="gc7-Dc-x4a"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading people..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rg-7J-4LT">
+                                <rect key="frame" x="124" y="126" width="155" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building/Room Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXR-69-pdU">
+                                <rect key="frame" x="124" y="94" width="189" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgz-yv-FUZ">
+                                <rect key="frame" x="0.0" y="172" width="375" height="495"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-cI-m96" customClass="LocationView" customModule="IndoorTrackingClient" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="359" height="479"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.67467068389999996" green="0.34335499749999998" blue="0.36231525749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pJ0-cI-m96" secondAttribute="bottom" constant="8" id="4Nb-Gt-vxz"/>
+                                    <constraint firstAttribute="trailing" secondItem="pJ0-cI-m96" secondAttribute="trailing" constant="8" id="foP-at-iIN"/>
+                                    <constraint firstItem="pJ0-cI-m96" firstAttribute="top" secondItem="zgz-yv-FUZ" secondAttribute="top" constant="8" id="hie-TW-jNf"/>
+                                    <constraint firstItem="pJ0-cI-m96" firstAttribute="leading" secondItem="zgz-yv-FUZ" secondAttribute="leading" constant="8" id="tQG-Rd-aeK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HXR-69-pdU" firstAttribute="top" secondItem="4jD-Cq-6jt" secondAttribute="top" constant="10" id="0mr-Gd-Oya"/>
+                            <constraint firstItem="HXR-69-pdU" firstAttribute="leading" secondItem="4jD-Cq-6jt" secondAttribute="trailing" constant="8" id="5lU-s9-VPj"/>
+                            <constraint firstItem="eZl-Wr-tIM" firstAttribute="top" secondItem="zgz-yv-FUZ" secondAttribute="bottom" id="7Wt-Qg-hlv"/>
+                            <constraint firstItem="8Rg-7J-4LT" firstAttribute="leading" secondItem="4jD-Cq-6jt" secondAttribute="trailing" constant="8" id="FnB-aE-QjU"/>
+                            <constraint firstAttribute="trailing" secondItem="zgz-yv-FUZ" secondAttribute="trailing" id="QlF-dP-xEF"/>
+                            <constraint firstItem="zgz-yv-FUZ" firstAttribute="top" secondItem="4jD-Cq-6jt" secondAttribute="bottom" constant="8" id="S0K-MP-dcx"/>
+                            <constraint firstItem="zgz-yv-FUZ" firstAttribute="leading" secondItem="6O8-wr-iFQ" secondAttribute="leading" id="Z8v-rK-PWV"/>
+                            <constraint firstItem="8Rg-7J-4LT" firstAttribute="top" secondItem="HXR-69-pdU" secondAttribute="bottom" constant="8" id="bwA-UB-Z6c"/>
+                            <constraint firstItem="4jD-Cq-6jt" firstAttribute="top" secondItem="G4J-HC-sVG" secondAttribute="bottom" constant="20" id="gPY-SM-PYx"/>
+                            <constraint firstItem="4jD-Cq-6jt" firstAttribute="leading" secondItem="6O8-wr-iFQ" secondAttribute="leadingMargin" constant="20" id="l3t-JN-XrG"/>
+                            <constraint firstItem="8Rg-7J-4LT" firstAttribute="top" secondItem="HXR-69-pdU" secondAttribute="bottom" constant="8" id="xwu-F8-F6U"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="LOT DETAILS" id="trX-C1-act"/>
+                    <connections>
+                        <outlet property="locationView" destination="pJ0-cI-m96" id="qk9-Uv-IqV"/>
+                        <outlet property="nameLabelView" destination="HXR-69-pdU" id="HZD-5i-uCE"/>
+                        <outlet property="numberOfPeopleLabel" destination="8Rg-7J-4LT" id="zZD-lQ-nIy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZ2-xc-0nQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2319" y="5614"/>
         </scene>
     </scenes>
     <resources>

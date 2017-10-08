@@ -272,7 +272,7 @@ class User {
     }
     
     // Handler only ever gets called if we receive a location back from the server.
-    func location(handler: @escaping (Double, Double) -> Void) {
+    func location(handler: @escaping (String, String, Double, Double) -> Void) {
         
         // if this user doesn't have a chip, we can't get its location.
         guard self.chip != nil else {
@@ -282,21 +282,21 @@ class User {
         if let thisUsersChipID = self.chip?.id {
             Alamofire.request("http://13.70.187.234/api/little_brother_chips/\(thisUsersChipID)/location").responseJSON { response in
                 if let jsonDict = response.value as? [String : Any] {
-                    if let coordinatesDict = jsonDict["coordinates"] as? [String : Any] {
-                        if let x = coordinatesDict["x"] as? Double, let y = coordinatesDict["y"] as? Double {
-                            handler(x, y)
+                    
+                    if let lotDict = jsonDict["lot"] as? [String : Any],
+                       let coordsDict = jsonDict["coordinates"] as? [String : Any],
+                       let buildingDict = jsonDict ["building"] as? [String : Any] {
+                        
+                        if let x = coordsDict["x"] as? Double,
+                            let y = coordsDict["y"] as? Double,
+                            let buildingName = buildingDict["name"] as? String,
+                            let lotName = lotDict["name"] as? String {
+                            handler(buildingName, lotName, x, y)
                         }
                     }
                 }
             }
         }
-    }
-    
-    func buildingAndLot(handler: @escaping (String) -> Void) {
-        
-        
-        
-        
     }
     
     // Super simple helper functions on the class.

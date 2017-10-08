@@ -13,6 +13,8 @@ class LotListController: UITableViewController {
     var lots = [Lot]()
     var building: Building?
     
+    //private var selectedLot: Lot?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,15 +60,24 @@ class LotListController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedLot = lots[indexPath.row]
-        let nearbyBeaconsList = BeaconListController(currentLot: selectedLot)
-        
-        //self.navigationController?.pushViewController(nearbyBeaconsList, animated: true)
-    }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowLotDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? LotDetailController {
+            
+            if let row = self.tableView.indexPathForSelectedRow?.row {
+                let selectedLot = lots[row]
+                destinationVC.lot = selectedLot
+            }
+            
+            //destinationVC.lot
+        }
     }
     
     // Other
@@ -124,11 +135,7 @@ extension LotListController : FormDelegate {
         
         let dimensions = LotDimensions(units: units, width: width, height: height, length: length)
         
-        let rssi1m = Int(data["rssi_1m_away_from_beacon"]!) ?? 0
-        let phoneHeight = Double(data["average_phone_height"]!) ?? 0
-        let pathLoss = Double(data["path_loss"]!) ?? 0
-        
-        Lot.create(buildingID: UUID.init(uuidString: buildingId)!, lotType: lotType, name: name, floorLevel: floorLevel, dimensions: dimensions, rssi1m: rssi1m, phoneHeight: phoneHeight, pathLoss: pathLoss) { newLot in
+        Lot.create(buildingID: UUID.init(uuidString: buildingId)!, lotType: lotType, name: name, floorLevel: floorLevel, dimensions: dimensions) { newLot in
             self.presentedViewController?.dismiss(animated: true, completion: nil)
             self.reloadLots()
         }
