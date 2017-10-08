@@ -290,7 +290,7 @@
 				TargetAttributes = {
 					29CF5A2D1F63DD5A00087325 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = R6Q5T2H2M4;
+						DevelopmentTeam = F5NBU4297C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -537,7 +537,7 @@
 			baseConfigurationReference = AFAFF4C0AE372604B0500E96 /* Pods-IndoorTrackingClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R6Q5T2H2M4;
+				DEVELOPMENT_TEAM = F5NBU4297C;
 				INFOPLIST_FILE = IndoorTrackingClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -552,7 +552,7 @@
 			baseConfigurationReference = 9A4A32ABAFAFE563D7E34027 /* Pods-IndoorTrackingClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R6Q5T2H2M4;
+				DEVELOPMENT_TEAM = F5NBU4297C;
 				INFOPLIST_FILE = IndoorTrackingClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
