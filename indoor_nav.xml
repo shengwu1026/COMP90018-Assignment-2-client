@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map uid="V0-ElD" name="indoor_nav" ownerName="shengwu1026" cleanName="indoor-nav" groupsLabel="Groups" listsLabel="Lists" layersLabel="Layers">
+  <card uid="x8mS8w" id="1" role="GroupHeader" index="0" title="Sprint 1" description="Inception &amp; Elaboration " owner="shengwu1026" estimation="72" dueDate="2017-08-26 00:00:00Z" status="done" importance="medium">
+    <card uid="C4GP1S" id="2" role="ListHeader" parentCardId="1" index="0" title="Kick-off meeting" description="A high-level requirement walkthrough to understand the scope of the initiative. &#xA;(BA &amp; Business)" owner="shengwu1026" estimation="3" dueDate="2017-08-13 00:00:00Z" status="done" importance="medium">
+      <comment cardId="2" id="1" message="Business wanted to have an indoor navigation app to locate people and do route planning.&#xA;High-level features should include:&#xA;1. Users be able to see all people in the building from the app.&#xA;2. The app can do route planning, such as route of shortest distance / time and show these information on the map." authorName="shengwu1026" creationDateTime="2017-10-08 03:29:48Z" lastEditionDateTime="2017-10-08 03:33:50Z" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="7abJB4" id="13" role="ListHeader" parentCardId="1" index="1" title="High-level requirement walkthrough" description="A high-level requirement walkthrough with developers to arrive a high-level estimate for dev and release time and cost. (BA, business and tech lead)" owner="shengwu1026" estimation="2" dueDate="2017-08-13 00:00:00Z" status="done" importance="medium">
+      <comment cardId="13" id="1" message="If we want to locate people and do route planning, it would take at least half a year because of the limit of resource. As the business wanted the first release in October, they decided to have the 'locate people' feature first. " authorName="shengwu1026" creationDateTime="2017-10-08 03:32:53Z" lastEditionDateTime="2017-10-08 03:32:53Z" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="7TneM8" id="14" role="ListHeader" parentCardId="1" index="2" title="Create main story list" owner="shengwu1026" estimation="13" dueDate="2017-08-15 00:00:00Z" status="done" importance="high">
+      <checkListItem cardId="14" id="1" index="0" content="Do second research to see what public domain has in the field of indoor navigation." isDone="true" />
+      <comment cardId="14" id="1" message="Main story list:&#xA;1. As an administrator, I want a login page, so that I can access my account.&#xA;2. As an administrator, I want to be able to create users so that I can add people that are not in the database.&#xA;3. As an administrator, I want to be able to create buildings so that I can add buildings that are not in the database.&#xA;4. As an administrator, I want to be able to create lots so that I can add lots that are not in the database.&#xA;5. As an administrator, I want to be able to attach chips to people, so that I can locate them.&#xA;6. As an administrator, I want to be able to attach beacons to lots, so that I can track people.&#xA;6. As a user, I want to be able to see where people are so that I can find them.&#xA;7. As a user, I want to be able to see how many people there are in a room, so that I have the basic knowledge of the room.&#xA;8. As a user, I wan to be able to create map for my own room so that it is accurate.&#xA;9. As a user, I want to be able to see whether there are active beacons around so that I can know whether I'm locatable. " authorName="shengwu1026" creationDateTime="2017-10-08 03:35:01Z" lastEditionDateTime="2017-10-08 05:43:49Z" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="8ULhDy" id="15" role="ListHeader" parentCardId="1" index="3" title="High-level estimate" owner="shengwu1026" estimation="11" dueDate="2017-08-16 00:00:00Z" status="done" importance="medium">
+      <checkListItem cardId="15" id="1" index="0" content="BA" isDone="true" />
+      <checkListItem cardId="15" id="2" index="1" content="Design" isDone="true" />
+      <checkListItem cardId="15" id="3" index="2" content="Dev and Test" isDone="true" />
+      <checkListItem cardId="15" id="4" index="3" content="Project management" isDone="true" />
+      <comment cardId="15" id="1" message="Include BA, design, dev, test and project management, the time estimate was about 2 months. Present to the business with +/-60% contingency to review." authorName="shengwu1026" creationDateTime="2017-10-08 03:50:16Z" lastEditionDateTime="2017-10-08 03:50:35Z" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="gYUp3Y" id="16" role="ListHeader" parentCardId="1" index="4" title="Commitment" description="Let business review and if they are happy to go, we move on to elaboration phase." owner="shengwu1026" estimation="0" dueDate="2017-08-17 00:00:00Z" status="done" importance="high">
+      <comment cardId="16" id="1" message="Business was happy to commit the initiative." authorName="shengwu1026" creationDateTime="2017-10-08 03:44:41Z" lastEditionDateTime="2017-10-08 03:44:41Z" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="m2IevP" id="28" role="ListHeader" parentCardId="1" index="5" title="Confirm main story list" description="Confirm the in-scope items, priorities and Must Have / Should Have / Could Have. (BA &amp; Business)" owner="shengwu1026" estimation="1" dueDate="2017-08-20 00:00:00Z" status="done" importance="high">
+      <comment cardId="28" id="1" message="Business was happy with the main story list" authorName="shengwu1026" creationDateTime="2017-10-08 03:55:32Z" lastEditionDateTime="2017-10-08 03:55:32Z" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="ORxM8W" id="29" role="ListHeader" parentCardId="1" index="6" title="Design workshops" description="Understand the requirements from UX standpoint. (BA, business and UX designer)" owner="shengwu1026" estimation="2" dueDate="2017-08-20 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="TJ1dfw" id="30" role="ListHeader" parentCardId="1" index="7" title="Create Mock-ups" description="Create mock-ups" owner="shengwu1026" estimation="13" dueDate="2017-08-22 00:00:00Z" status="done" importance="medium">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="kfJrwT" id="31" role="ListHeader" parentCardId="1" index="8" title="Design testing" description="Test the design. (UX designer, Business)" owner="shengwu1026" estimation="1" dueDate="2017-08-22 00:00:00Z" status="done" importance="medium">
+      <attachment cardId="31" id="1" name="app-layout.png" type="File" contentType="image/png" url="https://www.featuremap.co/files/shengwu1026/_ufP3ehesK_6NM4w" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="M6bXKm" id="32" role="ListHeader" parentCardId="1" index="9" title="User story breakdown" description="Break down high-level epics into low-level user stories. (BA)" owner="shengwu1026" estimation="13" dueDate="2017-08-24 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="PDJ-vy" id="34" role="ListHeader" parentCardId="1" index="10" title="Technical / Solution design" description="Create technical design based on user stories. (BA, dev, test" owner="shengwu1026" estimation="13" dueDate="2017-08-26 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+  </card>
+  <card uid="uQ2st2" id="9" role="GroupHeader" index="1" title="Sprint 2" description="Construction" owner="shengwu1026" estimation="64" dueDate="2017-09-09 00:00:00Z" status="done" importance="medium">
+    <card uid="x6LDzH" id="10" role="ListHeader" parentCardId="9" index="0" title="Product Backlog Refinement" description="'What' and 'Why' of the stories are understood. Technical solutions for walked through are defined. (BA, Business)" owner="shengwu1026" estimation="1" dueDate="2017-08-27 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="ikM5AO" id="39" role="ListHeader" parentCardId="9" index="1" title="Estimation" description="Stories are estimated with points. Stories ave sub tasks with estimation." owner="shengwu1026" estimation="1" dueDate="2017-08-27 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="ZmVkDf" id="40" role="ListHeader" parentCardId="9" index="2" title="Sprint Planning" description="Select stories to be proceeded for this sprint based on priorities." owner="shengwu1026" estimation="1" dueDate="2017-08-27 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="ElVx6A" id="41" role="ListHeader" parentCardId="9" index="3" title="User Stories Dev" description="Coding is complete and in source control (GIT)." owner="shengwu1026" estimation="60" dueDate="2017-09-09 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics">
+        <card uid="DfzZCx" id="48" role="ListItem" parentCardId="41" otherParentCardId="33" index="0" title="Login page (without credentials for now)" />
+        <card uid="dnHq40" id="49" role="ListItem" parentCardId="41" otherParentCardId="33" index="1" title="Create user and display user details (without location for now)" />
+      </card>
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features">
+        <card uid="nY4Uu8" id="50" role="ListItem" parentCardId="41" otherParentCardId="6" index="0" title="As a user, I want a login page so that I can see my account." />
+        <card uid="fd65wT" id="52" role="ListItem" parentCardId="41" otherParentCardId="6" index="1" title="As a user, I want to see my friends' locations and their details." />
+        <card uid="JKT4lv" id="55" role="ListItem" parentCardId="41" otherParentCardId="6" index="2" title="As a user, I want to be able to create users, so that I can add them in my friend list." />
+      </card>
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories">
+        <card uid="RlVank" id="51" role="ListItem" parentCardId="41" otherParentCardId="19" index="0" title="As a user, I want the login page to display my name on the screen, so that I can go into my account without specifying credentials." owner="shengwu1026" estimation="10" dueDate="2017-09-07 00:00:00Z" status="done" importance="high" />
+        <card uid="IM0don" id="53" role="ListItem" parentCardId="41" otherParentCardId="19" index="1" title="As a user, I want a friend list screen so that I can choose someone to see details." owner="shengwu1026" estimation="10" dueDate="2017-09-07 00:00:00Z" status="done" importance="high" />
+        <card uid="MpHxiO" id="54" role="ListItem" parentCardId="41" otherParentCardId="19" index="2" title="As a user, I want to see my friend's details, including their current location and the map so tha..." description="As a user, I want to see my friend's details, including their current location and the map so that I can locate them." owner="shengwu1026" estimation="15" dueDate="2017-09-07 00:00:00Z" status="done" importance="high" />
+        <card uid="ZFO_aP" id="56" role="ListItem" parentCardId="41" otherParentCardId="19" index="3" title="As a user, I want to be able to create users, including firstname, surname, username, password, s..." description="As a user, I want to be able to create users, including firstname, surname, username, password, so that I can add them to the database." owner="shengwu1026" estimation="15" dueDate="2017-09-07 00:00:00Z" status="done" importance="high" />
+        <card uid="eJLl-Y" id="62" role="ListItem" parentCardId="41" otherParentCardId="19" index="4" title="As a user, I want to attach chip to a new friend, so that s/he is tractable." owner="shengwu1026" estimation="10" dueDate="2017-09-07 00:00:00Z" status="done" importance="high" />
+      </card>
+    </card>
+    <card uid="xKgcXY" id="42" role="ListHeader" parentCardId="9" index="4" title="Desk Check" description="Dev / testers provide a walk through of the implementation with the business.  Feedback is gathered." owner="shengwu1026" estimation="1" dueDate="2017-09-09 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+  </card>
+  <card uid="kufDwV" id="4" role="GroupHeader" index="2" title="Sprint 3" description="Construction" owner="shengwu1026" estimation="64" dueDate="2017-09-22 00:00:00Z" status="done" importance="medium">
+    <card uid="sAd7NY" id="5" role="ListHeader" parentCardId="4" index="0" title="Product Backlog Refinement" description="'What' and 'Why' of the stories are understood. Technical solutions for walked through are defined. (BA, Business)" owner="shengwu1026" estimation="1" dueDate="2017-09-03 00:00:00Z" status="done" importance="medium">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="0qpBlP" id="35" role="ListHeader" parentCardId="4" index="1" title="Estimation" description="Stories are estimated with points. Stories ave sub tasks with estimation." owner="shengwu1026" estimation="1" dueDate="2017-09-03 00:00:00Z" status="done" importance="medium">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="3k0OrL" id="36" role="ListHeader" parentCardId="4" index="2" title="Sprint Planing" description="Select stories to be proceeded for this sprint based on priorities." owner="shengwu1026" estimation="1" dueDate="2017-09-03 00:00:00Z" status="done" importance="medium">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="XkEM3-" id="37" role="ListHeader" parentCardId="4" index="3" title="User Stories Dev" description="Coding is complete and in source control (GIT)." owner="shengwu1026" estimation="60" dueDate="2017-09-21 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics">
+        <card uid="fC3pUy" id="57" role="ListItem" parentCardId="37" otherParentCardId="33" index="0" title="Show a screen of tracking status." />
+        <card uid="Dj20Us" id="58" role="ListItem" parentCardId="37" otherParentCardId="33" index="1" title="See user details with actual location." />
+        <card uid="Cn4Kf2" id="61" role="ListItem" parentCardId="37" otherParentCardId="33" index="2" title="Create buildings and lots." />
+      </card>
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features">
+        <card uid="_kJRif" id="59" role="ListItem" parentCardId="37" otherParentCardId="6" index="0" title="As a user, I want to see a screen to see whether there are active beacons around me, so that I kn..." description="As a user, I want to see a screen to see whether there are active beacons around me, so that I know whether I'm tractable." />
+        <card uid="AtcgDP" id="60" role="ListItem" parentCardId="37" otherParentCardId="6" index="1" title="As a user, I want to see my friend's location in the map." />
+        <card uid="XU2B5b" id="64" role="ListItem" parentCardId="37" otherParentCardId="6" index="2" title="As a user, I want to be able to create buildings and lots, so that they are stored in the database." />
+      </card>
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories">
+        <card uid="vxGi6_" id="63" role="ListItem" parentCardId="37" otherParentCardId="19" index="0" title="As a user, I want to see a screen to see whether there are active beacons around me and the statu..." description="As a user, I want to see a screen to see whether there are active beacons around me and the status detail (active or not), so that I know whether I'm tractable." owner="shengwu1026" estimation="10" dueDate="2017-09-21 00:00:00Z" status="done" importance="high" />
+        <card uid="YixJKS" id="65" role="ListItem" parentCardId="37" otherParentCardId="19" index="1" title="As a user, I want to be able to see my friend's location on the map so that I know where exactly ..." description="As a user, I want to be able to see my friend's location on the map so that I know where exactly s/he is in the room." owner="shengwu1026" estimation="30" dueDate="2017-10-21 00:00:00Z" status="done" importance="high" />
+        <card uid="M-_oYH" id="66" role="ListItem" parentCardId="37" otherParentCardId="19" index="2" title="As a user, I want to be able to create buildings, include name, address details (unit, street, st..." description="As a user, I want to be able to create buildings, include name, address details (unit, street, street no, suburb, city, state, postcode), so that this building is stored in the database." owner="shengwu1026" estimation="10" dueDate="2017-09-21 00:00:00Z" status="done" importance="high" />
+        <card uid="G4eaWk" id="67" role="ListItem" parentCardId="37" otherParentCardId="19" index="3" title="As a user, I want to be able to create lots in the building, including lot type, level, name and ..." description="As a user, I want to be able to create lots in the building, including lot type, level, name and lot shape (width, height, length in metres), so that I can add lot to the database. " owner="shengwu1026" estimation="10" dueDate="2017-09-21 00:00:00Z" status="done" importance="high" />
+      </card>
+    </card>
+    <card uid="u2glzJ" id="38" role="ListHeader" parentCardId="4" index="4" title="Desk check" description="Dev / testers provide a walk through of the implementation with the business.  Feedback is gathered." owner="shengwu1026" estimation="1" dueDate="2017-09-21 00:00:00Z" status="done" importance="high">
+      <comment cardId="38" id="1" message="Business was happy with the implementation." authorName="shengwu1026" creationDateTime="2017-10-08 04:21:37Z" lastEditionDateTime="2017-10-08 04:21:37Z" />
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+  </card>
+  <card uid="tHqTO7" id="11" role="GroupHeader" index="3" title="sprint 4" description="Construction &amp; Transition" owner="shengwu1026" estimation="66" dueDate="2017-10-07 00:00:00Z" status="done" importance="high">
+    <card uid="UW1m11" id="12" role="ListHeader" parentCardId="11" index="0" title="Product Backlog Refinement" description="'What' and 'Why' of the stories are understood. Technical solutions for walked through are defined. (BA, Business)" owner="shengwu1026" estimation="1" dueDate="2017-09-24 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="CcLLQE" id="43" role="ListHeader" parentCardId="11" index="1" title="Estimation" description="Stories are estimated with points. Stories ave sub tasks with estimation." owner="shengwu1026" estimation="1" dueDate="2017-09-24 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="sP3Rsa" id="44" role="ListHeader" parentCardId="11" index="2" title="Sprint planning" description="Select stories to be proceeded for this sprint based on priorities." owner="shengwu1026" estimation="1" dueDate="2017-09-24 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="d9Vm1f" id="45" role="ListHeader" parentCardId="11" index="3" title="User stories dev" description="Coding is complete and in source control (GIT)." owner="shengwu1026" estimation="60" dueDate="2017-10-05 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics">
+        <card uid="S0lXvW" id="68" role="ListItem" parentCardId="45" otherParentCardId="33" index="0" title="Show how many people there are in a room." />
+      </card>
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features">
+        <card uid="KszdvU" id="69" role="ListItem" parentCardId="45" otherParentCardId="6" index="0" title="As a user, I want to be able to see how many there are in a particular room so that I know the ro..." description="As a user, I want to be able to see how many there are in a particular room so that I know the room details." />
+      </card>
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories">
+        <card uid="Zbu3Y9" id="70" role="ListItem" parentCardId="45" otherParentCardId="19" index="0" title="As a user, I want to see how many people there are in the room so that I know the room details." owner="shengwu1026" estimation="20" dueDate="2017-10-04 00:00:00Z" status="done" importance="high" />
+        <card uid="EG-5K_" id="71" role="ListItem" parentCardId="45" otherParentCardId="19" index="1" title="As a user, I want the map to show all people's locations in the room so that I know the exact loc..." description="As a user, I want the map to show all people's locations in the room so that I know the exact locations." owner="shengwu1026" estimation="30" dueDate="2017-10-04 00:00:00Z" status="done" importance="high" />
+        <card uid="ZgL_Oc" id="72" role="ListItem" parentCardId="45" otherParentCardId="19" index="2" title="As a user, I want to be able to attach beacons to lots so that I can make the room tractable." owner="shengwu1026" estimation="10" dueDate="2017-10-04 00:00:00Z" status="done" importance="high" />
+      </card>
+    </card>
+    <card uid="1MTziS" id="46" role="ListHeader" parentCardId="11" index="4" title="Desk check" owner="shengwu1026" estimation="1" dueDate="2017-10-05 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+    <card uid="o98R00" id="47" role="ListHeader" parentCardId="11" index="5" title="Final Review" description="Final review before closing the project. (Business)" owner="shengwu1026" estimation="2" dueDate="2017-10-05 00:00:00Z" status="done" importance="high">
+      <card uid="nyNI97" id="33" role="LayerHeader" index="0" title="Epics" />
+      <card uid="a5-1sR" id="6" role="LayerHeader" index="1" title="Features" />
+      <card uid="10FSHR" id="19" role="LayerHeader" index="2" title="User stories" />
+    </card>
+  </card>
+</map>
