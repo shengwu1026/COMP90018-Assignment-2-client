@@ -49,12 +49,17 @@ class UserListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell") as? LoginTableViewCell else {
-            fatalError("The dequeued cell was not the correct type: LoginTableViewCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserDetailTableViewCell") as? UserDetailTableViewCell else {
+            fatalError("The dequeued cell was not the correct type: UserDetailTableViewCell")
         }
         
         cell.userLabel.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
-
+        
+        // this is async. bad idea here.
+        users[indexPath.row].location { building, room, _, _ in
+            cell.userLocationLabel.text = "At \(building) in \(room)"
+        }
+        
         return cell
     }
     

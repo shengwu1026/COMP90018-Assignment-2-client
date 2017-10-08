@@ -11,6 +11,7 @@ import UIKit
 class LotDetailController: UIViewController {
     
     @IBOutlet weak var nameLabelView: UILabel!
+    @IBOutlet weak var lotNameLabelView: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
     
     @IBOutlet weak var locationView: LocationView!
@@ -58,7 +59,8 @@ class LotDetailController: UIViewController {
         // user was set, so make sure we update the ui.
         if let buildingName = lot?.building.name,
             let lotName = lot?.name {
-            nameLabelView.text = "\(buildingName) \(lotName)"
+            nameLabelView.text = "\(buildingName)"
+            lotNameLabelView.text = "\(lotName)"
         }
     }
     

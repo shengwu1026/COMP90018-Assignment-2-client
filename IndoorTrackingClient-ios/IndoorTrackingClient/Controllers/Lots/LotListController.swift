@@ -8,10 +8,12 @@
 
 import UIKit
 
-class LotListController: UITableViewController {
+class LotListController: UITableViewController, LotTableViewCellDelegate {
     
     var lots = [Lot]()
     var building: Building?
+    
+    var configLot: Lot?
     
     //private var selectedLot: Lot?
     
@@ -56,6 +58,7 @@ class LotListController: UITableViewController {
         let length = lots[indexPath.row].dimensions.length
         
         cell.userLabel.text = name
+        cell.delegate = self
         
         return cell
     }
@@ -69,14 +72,29 @@ class LotListController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? LotDetailController {
-            
-            if let row = self.tableView.indexPathForSelectedRow?.row {
-                let selectedLot = lots[row]
-                destinationVC.lot = selectedLot
+        
+        if let identifier = segue.identifier {
+            switch(identifier) {
+            case "ShowBeaconConfig":
+                if let destinationVC = segue.destination as? BeaconListController {
+                    
+                    if let configLot = configLot {
+                        destinationVC.currentLot = configLot
+                    }
+                }
+                break
+            case "ShowLotDetail":
+                if let destinationVC = segue.destination as? LotDetailController {
+                    
+                    if let row = self.tableView.indexPathForSelectedRow?.row {
+                        let selectedLot = lots[row]
+                        destinationVC.lot = selectedLot
+                    }
+                }
+                break
+            default:
+                break
             }
-            
-            //destinationVC.lot
         }
     }
     
@@ -96,6 +114,13 @@ class LotListController: UITableViewController {
             Lot.lotsForBuildingWithID(buildingID: building.id) { lots in
                 self.gotLots(lots: lots)
             }
+        }
+    }
+    
+    func didTapConfig(cell: LotTableViewCell) {
+        if let indexPath = self.tableView.indexPath(for: cell) {
+            configLot = lots[indexPath.row]
+            performSegue(withIdentifier: "ShowBeaconConfig", sender: self)
         }
     }
     

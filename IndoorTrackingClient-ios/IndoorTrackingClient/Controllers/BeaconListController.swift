@@ -9,51 +9,30 @@
 import UIKit
 import CoreLocation
 
-class BeaconInfoCell : UITableViewCell {
-    
-    init() {
-        super.init(style: .subtitle, reuseIdentifier: "BeaconInfoCell")
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-}
-
 class BeaconListController: UITableViewController {
 
     var locationManager: CLLocationManager!
     let proximityUUID = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")! // This is the default for our beacons.
     var detectedBeacons = [CLBeacon]()
-    var currentLot: Lot!
+    var currentLot: Lot?
     var haveSetup = false
 
     deinit {
-        print("did deinit")
-    }
-    
-    init(currentLot: Lot) {
-        self.currentLot = currentLot
-        super.init(style: .plain)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        //print("did deinit")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(BeaconInfoCell.self, forCellReuseIdentifier: "BeaconInfoCell")
 
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         
+        self.tableView.separatorStyle = .none
+        
         haveSetup = true
         
         startMonitoringBeaconRegion()
-        self.title = "New Nearby Beacons"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,18 +69,27 @@ class BeaconListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = BeaconInfoCell()
+        // Does this really dequeue or is it creating it every time?
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconInfoCell") as? BeaconInfoCell else {
+            fatalError("The dequeued cell was not the correct type: BeaconInfoCell")
+        }
         
-        cell.textLabel?.text = "Major: \(detectedBeacons[indexPath.row].major)"
-        cell.detailTextLabel?.text = "RSSI: \(detectedBeacons[indexPath.row].rssi)"
+        cell.beaconLabel?.text = "Major: \(detectedBeacons[indexPath.row].major), Minor: \(detectedBeacons[indexPath.row].minor)"
+        cell.beaconDistanceLabel?.text = "Distance: \(detectedBeacons[indexPath.row].accuracy.rounded(toPlaces: 3)) metres"
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedBeacon = detectedBeacons[indexPath.row]
-        let addNewBeaconController = AddBeaconViewController(selectedBeacon: selectedBeacon, currentLot: currentLot)
-        self.present(addNewBeaconController, animated: true, completion: nil)
+        if let currentLot = currentLot {
+            let selectedBeacon = detectedBeacons[indexPath.row]
+            let addNewBeaconController = AddBeaconViewController(selectedBeacon: selectedBeacon, currentLot: currentLot)
+            self.present(addNewBeaconController, animated: true, completion: nil)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
 
@@ -113,6 +101,15 @@ extension BeaconListController : CLLocationManagerDelegate {
     }
 }
 
+
+extension Double {
+    // https://stackoverflow.com/questions/27338573/rounding-a-double-value-to-x-number-of-decimal-places-in-swift
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
 
 
 
