@@ -47,8 +47,8 @@ class LotListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Does this really dequeue or is it creating it every time?
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell") as? LoginTableViewCell else {
-            fatalError("The dequeued cell was not the correct type: LoginTableViewCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LotTableViewCell") as? LotTableViewCell else {
+            fatalError("The dequeued cell was not the correct type: LotTableViewCell")
         }
         
         let name = lots[indexPath.row].name!

@@ -69,7 +69,7 @@
 		297850EA1F6E10F900AB2239 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		2999C8E11F878CFA0075D505 /* UserDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailController.swift; path = Controllers/Users/UserDetailController.swift; sourceTree = "<group>"; };
 		2999C8E31F88A98C0075D505 /* LotDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotDetailController.swift; path = Controllers/Lots/LotDetailController.swift; sourceTree = "<group>"; };
-		29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndoorTrackingClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CF5A2E1F63DD5A00087325 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CF5A311F63DD5A00087325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29CF5A331F63DD5A00087325 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29CF5A361F63DD5A00087325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		29CF5A2F1F63DD5A00087325 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */,
+				29CF5A2E1F63DD5A00087325 /* Tracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,9 +258,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29CF5A2D1F63DD5A00087325 /* IndoorTrackingClient */ = {
+		29CF5A2D1F63DD5A00087325 /* Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29CF5A401F63DD5A00087325 /* Build configuration list for PBXNativeTarget "IndoorTrackingClient" */;
+			buildConfigurationList = 29CF5A401F63DD5A00087325 /* Build configuration list for PBXNativeTarget "Tracker" */;
 			buildPhases = (
 				9530F6D04C5339568EA9638D /* [CP] Check Pods Manifest.lock */,
 				29CF5A2A1F63DD5A00087325 /* Sources */,
@@ -273,9 +273,9 @@
 			);
 			dependencies = (
 			);
-			name = IndoorTrackingClient;
+			name = Tracker;
 			productName = IndoorTrackingClient;
-			productReference = 29CF5A2E1F63DD5A00087325 /* IndoorTrackingClient.app */;
+			productReference = 29CF5A2E1F63DD5A00087325 /* Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -308,7 +308,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29CF5A2D1F63DD5A00087325 /* IndoorTrackingClient */,
+				29CF5A2D1F63DD5A00087325 /* Tracker */,
 			);
 		};
 /* End PBXProject section */
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29CF5A401F63DD5A00087325 /* Build configuration list for PBXNativeTarget "IndoorTrackingClient" */ = {
+		29CF5A401F63DD5A00087325 /* Build configuration list for PBXNativeTarget "Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29CF5A411F63DD5A00087325 /* Debug */,

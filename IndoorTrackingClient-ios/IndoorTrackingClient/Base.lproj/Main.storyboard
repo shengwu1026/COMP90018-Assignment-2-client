@@ -13,7 +13,7 @@
         <!--Response Test-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,7 +35,7 @@
         <!--Map View Controller-->
         <scene sceneID="wl5-tB-fzJ">
             <objects>
-                <viewController id="VFf-xx-XBA" customClass="MapViewController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VFf-xx-XBA" customClass="MapViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gTB-fJ-hq4"/>
                         <viewControllerLayoutGuide type="bottom" id="iEc-fv-Oev"/>
@@ -44,7 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvw-Pg-pXC" customClass="LocationView" customModule="IndoorTrackingClient" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvw-Pg-pXC" customClass="LocationView" customModule="Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -105,7 +105,7 @@
         <!--Login View Controller-->
         <scene sceneID="jgb-cG-i6M">
             <objects>
-                <tableViewController id="f0O-f9-IFi" customClass="LoginViewController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="f0O-f9-IFi" customClass="LoginViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mPZ-dc-zuQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@
         <!--Beacon Distance View Controller-->
         <scene sceneID="zep-Ah-hAS">
             <objects>
-                <viewController id="dq5-sU-L0N" customClass="BeaconDistanceViewController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dq5-sU-L0N" customClass="BeaconDistanceViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="011-Sf-JKA"/>
                         <viewControllerLayoutGuide type="bottom" id="aoB-Hy-C5y"/>
@@ -152,7 +152,7 @@
         <!--Menu-->
         <scene sceneID="UTQ-zO-CCj">
             <objects>
-                <tableViewController id="pUX-Tn-efx" customClass="MenuTableViewController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pUX-Tn-efx" customClass="MenuTableViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vw5-7R-1Cj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +199,7 @@
         <!--Main Navigation Controller-->
         <scene sceneID="VN2-Oh-SQX">
             <objects>
-                <navigationController id="8tz-CR-OiT" customClass="MainNavigationController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="8tz-CR-OiT" customClass="MainNavigationController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y1D-aQ-CN6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -215,7 +215,7 @@
         <!--TRACKER-->
         <scene sceneID="3sZ-PA-c3U">
             <objects>
-                <viewController id="LmV-If-nOW" customClass="TrackerViewController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LmV-If-nOW" customClass="TrackerViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hov-au-8gj"/>
                         <viewControllerLayoutGuide type="bottom" id="Fmx-2s-TT4"/>
@@ -283,13 +283,13 @@
         <!--LOGIN-->
         <scene sceneID="DtE-60-BGR">
             <objects>
-                <tableViewController id="iHw-dA-Uqj" customClass="LoginViewController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="iHw-dA-Uqj" customClass="LoginViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tee-M7-xi2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="w8d-mG-wU6" customClass="LoginTableViewCell" customModule="IndoorTrackingClient" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="w8d-mG-wU6" customClass="LoginTableViewCell" customModule="Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w8d-mG-wU6" id="qT6-8D-KNL">
@@ -297,12 +297,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="a8z-1h-hrK">
-                                            <rect key="frame" x="8" y="20" width="40" height="40"/>
+                                            <rect key="frame" x="28" y="20" width="40" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29650042808219179" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fko-dp-bAw">
-                                            <rect key="frame" x="56" y="30" width="311" height="21"/>
+                                            <rect key="frame" x="76" y="30" width="299" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -329,7 +329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzJ-th-sTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="3092"/>
+            <point key="canvasLocation" x="32.799999999999997" y="3091.304347826087"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5aY-dU-XFk">
@@ -351,13 +351,13 @@
         <!--PEOPLE-->
         <scene sceneID="GFx-jR-2kk">
             <objects>
-                <tableViewController id="dvc-Ee-4Tq" customClass="UserListController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dvc-Ee-4Tq" customClass="UserListController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9tD-Og-Gc0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="XP1-I6-aUW" customClass="LoginTableViewCell" customModule="IndoorTrackingClient" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="XP1-I6-aUW" customClass="LoginTableViewCell" customModule="Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XP1-I6-aUW" id="ul8-3e-nIT">
@@ -403,13 +403,13 @@
         <!--BUILDINGS-->
         <scene sceneID="cEx-06-Tlv">
             <objects>
-                <tableViewController id="EAo-Y1-BUm" customClass="BuildingListController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EAo-Y1-BUm" customClass="BuildingListController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZHR-Yw-9Oe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="WJW-dT-obh" customClass="LoginTableViewCell" customModule="IndoorTrackingClient" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="WJW-dT-obh" customClass="LoginTableViewCell" customModule="Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WJW-dT-obh" id="7mN-Vv-8S2">
@@ -452,7 +452,7 @@
         <!--USER DETAILS-->
         <scene sceneID="uSC-Ei-bE1">
             <objects>
-                <viewController id="jFg-R5-hk5" customClass="UserDetailController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jFg-R5-hk5" customClass="UserDetailController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2XD-OR-BY7"/>
                         <viewControllerLayoutGuide type="bottom" id="OpC-MF-u7v"/>
@@ -484,7 +484,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lF-gy-UVB">
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cye-8x-gH0" customClass="LocationView" customModule="IndoorTrackingClient" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cye-8x-gH0" customClass="LocationView" customModule="Tracker" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="359" height="479"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -527,7 +527,7 @@
         <!--CHIP-->
         <scene sceneID="I1s-mf-jry">
             <objects>
-                <viewController title="CHIP" id="39o-7l-Jct" customClass="UserChipController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CHIP" id="39o-7l-Jct" customClass="UserChipController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4IG-AZ-39D"/>
                         <viewControllerLayoutGuide type="bottom" id="v4e-IQ-PRt"/>
@@ -571,33 +571,51 @@
         <!--LOTS-->
         <scene sceneID="17t-6j-LUQ">
             <objects>
-                <tableViewController id="U0D-Yz-VFb" customClass="LotListController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="U0D-Yz-VFb" customClass="LotListController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pNn-La-Rad">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="80" id="WAm-TQ-5Be" customClass="LoginTableViewCell" customModule="IndoorTrackingClient" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LotTableViewCell" rowHeight="80" id="WAm-TQ-5Be" customClass="LotTableViewCell" customModule="Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WAm-TQ-5Be" id="9MO-9R-tyH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buildings" translatesAutoresizingMaskIntoConstraints="NO" id="jCe-cG-TB6">
-                                            <rect key="frame" x="30" y="20" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buildings" translatesAutoresizingMaskIntoConstraints="NO" id="jCe-cG-TB6">
+                                            <rect key="frame" x="33" y="20" width="40" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29650042809999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="k4K-3S-bs0"/>
+                                                <constraint firstAttribute="width" constant="40" id="tCO-gi-xFu"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtB-tW-3wX">
-                                            <rect key="frame" x="78" y="30" width="289" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtB-tW-3wX">
+                                            <rect key="frame" x="81" y="28.5" width="49" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cog" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-0n-3LT">
+                                            <rect key="frame" x="307" y="20" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="SPP-cz-Cej"/>
+                                                <constraint firstAttribute="height" constant="40" id="yf0-RZ-L3j"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.7754995227" green="0.38922053579999999" blue="0.409707129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="xtB-tW-3wX" firstAttribute="leading" secondItem="jCe-cG-TB6" secondAttribute="trailing" constant="8" id="LsZ-02-8f9"/>
+                                        <constraint firstItem="jCe-cG-TB6" firstAttribute="centerY" secondItem="9MO-9R-tyH" secondAttribute="centerY" id="Mwt-GP-IBh"/>
+                                        <constraint firstItem="kkk-0n-3LT" firstAttribute="trailing" secondItem="9MO-9R-tyH" secondAttribute="trailingMargin" constant="-20" id="Vay-hH-oC1"/>
+                                        <constraint firstItem="kkk-0n-3LT" firstAttribute="centerY" secondItem="9MO-9R-tyH" secondAttribute="centerY" id="aHp-aw-vUM"/>
+                                        <constraint firstItem="jCe-cG-TB6" firstAttribute="leading" secondItem="9MO-9R-tyH" secondAttribute="leadingMargin" constant="25" id="blp-iG-abQ"/>
+                                        <constraint firstItem="xtB-tW-3wX" firstAttribute="leading" secondItem="jCe-cG-TB6" secondAttribute="trailing" constant="8" id="eZC-nY-hjw"/>
+                                        <constraint firstItem="xtB-tW-3wX" firstAttribute="centerY" secondItem="9MO-9R-tyH" secondAttribute="centerY" id="j12-BL-ceK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="userImageLabel" destination="jCe-cG-TB6" id="JHb-Ge-HMn"/>
@@ -617,12 +635,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjz-8i-WTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="4857"/>
+            <point key="canvasLocation" x="1749.5999999999999" y="4856.2218890554723"/>
         </scene>
         <!--LOT DETAILS-->
         <scene sceneID="Gbp-nC-TmU">
             <objects>
-                <viewController id="K5z-Ap-tdI" customClass="LotDetailController" customModule="IndoorTrackingClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K5z-Ap-tdI" customClass="LotDetailController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G4J-HC-sVG"/>
                         <viewControllerLayoutGuide type="bottom" id="eZl-Wr-tIM"/>
@@ -654,7 +672,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgz-yv-FUZ">
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-cI-m96" customClass="LocationView" customModule="IndoorTrackingClient" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-cI-m96" customClass="LocationView" customModule="Tracker" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="359" height="479"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -699,6 +717,7 @@
         <image name="addchip" width="570" height="158"/>
         <image name="buildings" width="34" height="35"/>
         <image name="chip" width="219" height="219"/>
+        <image name="cog" width="33" height="33"/>
         <image name="users" width="35" height="35"/>
         <image name="wireless" width="75" height="83"/>
     </resources>
